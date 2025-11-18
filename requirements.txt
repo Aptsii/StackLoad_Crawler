@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+ddgs
+openai
+supabase
+python-dotenv
+schedule
+fastapi
+uvicorn
+pillow

@@ -1,0 +1,521 @@
+[
+  {
+    "name": "React",
+    "slug": "react",
+    "category": "frontend",
+    "description": "사용자 인터페이스 구축을 위한 JavaScript 라이브러리",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "popularity": 98,
+    "learning_resources": [
+      {
+        "url": "https://reactjs.org/docs",
+        "type": "documentation",
+        "title": "React 공식 문서"
+      },
+      {
+        "url": "https://reactjs.org/tutorial/tutorial.html",
+        "type": "tutorial",
+        "title": "React 튜토리얼"
+      }
+    ],
+    "ai_explanation": "React는 Facebook에서 개발한 선언적이고 효율적인 JavaScript 라이브러리입니다. 컴포넌트 기반 아키텍처를 통해 재사용 가능한 UI 요소를 만들 수 있으며, Virtual DOM을 사용하여 성능을 최적화합니다. JSX 문법을 사용하여 JavaScript 안에서 HTML과 유사한 코드를 작성할 수 있어 개발자 경험이 뛰어납니다.",
+    "homepage": "https://reactjs.org",
+    "repo": "https://github.com/facebook/react",
+    "project_suitability": [
+      "대화형 사용자 인터페이스가 중요한 웹 애플리케이션",
+      "SPA(Single Page Application) 개발",
+      "실시간 데이터 업데이트가 필요한 대시보드",
+      "컴포넌트 기반 재사용 가능한 UI 구축"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "JavaScript와 컴포넌트 개념 이해가 선행되어야 하며, 상태 관리와 생명주기를 이해하는 것이 중요합니다."
+    },
+    "updated_at": "2025-09-17T00:40:33.238"
+  },
+  {
+    "name": "Python",
+    "slug": "python",
+    "category": "language",
+    "description": "범용 프로그래밍 언어",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "popularity": 94,
+    "learning_resources": [],
+    "ai_explanation": "Python은 Guido van Rossum이 개발한 고급 프로그래밍 언어입니다. 간결하고 읽기 쉬운 문법으로 생산성이 높으며, 웹 개발, 데이터 분석, 인공지능, 자동화 등 다양한 분야에서 활용됩니다. 풍부한 라이브러리 생태계와 활발한 커뮤니티를 가지고 있어 학습과 개발에 유리합니다.",
+    "homepage": "https://www.python.org",
+    "repo": "https://github.com/python/cpython",
+    "project_suitability": [
+      "데이터 분석 및 데이터 사이언스 프로젝트",
+      "딥러닝 및 AI 모델 개발",
+      "웹 개발 및 API 서버 구축",
+      "자동화 스크립트 및 데이터 파이프라인"
+    ],
+    "learning_difficulty": {
+      "label": "초중급",
+      "stars": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "description": "읽기 쉬운 문법으로 프로그래밍 입문자에게 좋습니다."
+    },
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "Node.js",
+    "slug": "nodejs",
+    "category": "backend",
+    "description": "JavaScript 런타임 환경",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "popularity": 93,
+    "learning_resources": [],
+    "ai_explanation": "Node.js는 Chrome V8 JavaScript 엔진을 기반으로 한 서버 사이드 JavaScript 런타임 환경입니다. 이벤트 기반의 비동기 I/O 모델을 사용하여 높은 성능과 확장성을 제공합니다. NPM 생태계를 통해 수많은 오픈소스 패키지를 활용할 수 있으며, 프론트엔드와 백엔드에서 동일한 언어를 사용할 수 있는 장점이 있습니다.",
+    "homepage": "https://nodejs.org",
+    "repo": "https://github.com/nodejs/node",
+    "project_suitability": [
+      "확장 가능한 REST API 서버 구축",
+      "실시간 채팅 및 알림 시스템",
+      "마이크로서비스 아키텍처",
+      "I/O 집약적인 네트워크 애플리케이션"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "JavaScript 기초와 비동기 프로그래밍, 서버 개발 개념 이해가 필요합니다."
+    },
+    "updated_at": "2025-09-17T00:40:57.06"
+  },
+  {
+    "name": "Next.js",
+    "slug": "nextjs",
+    "category": "frontend",
+    "description": "React 기반 프로덕션 프레임워크",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "popularity": 91,
+    "learning_resources": [],
+    "ai_explanation": "Next.js는 Vercel에서 개발한 React 기반 풀스택 웹 프레임워크입니다. 서버 사이드 렌더링(SSR), 정적 사이트 생성(SSG), API 라우트 등을 지원하며, 성능 최적화와 SEO에 강점이 있습니다. 파일 기반 라우팅 시스템과 자동 코드 분할 기능으로 개발 생산성을 크게 향상시킵니다.",
+    "homepage": "https://nextjs.org",
+    "repo": "https://github.com/vercel/next.js",
+    "project_suitability": [
+      "SEO가 중요한 비즈니스 웹사이트",
+      "전자상거래 및 컨텐츠 사이트",
+      "마케팅 랜딩 페이지",
+      "블로그 및 미디어 플랫폼"
+    ],
+    "learning_difficulty": {
+      "label": "고급",
+      "stars": [
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "description": "React 경험이 필수이며, SSR/SSG 개념과 라우팅 시스템 이해가 중요합니다."
+    },
+    "updated_at": "2025-09-17T00:41:43.423"
+  },
+  {
+    "name": "TypeScript",
+    "slug": "typescript",
+    "category": "language",
+    "description": "JavaScript에 타입을 추가한 언어",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "popularity": 90,
+    "learning_resources": [],
+    "ai_explanation": "TypeScript는 Microsoft에서 개발한 JavaScript의 상위 집합 언어입니다. 정적 타입 검사를 통해 런타임 오류를 컴파일 타임에 잡아낼 수 있으며, 대규모 애플리케이션 개발 시 코드의 안정성과 유지보수성을 크게 향상시킵니다. 최신 ES 기능을 지원하며 다양한 IDE에서 뛰어난 개발자 도구를 제공합니다.",
+    "homepage": "https://www.typescriptlang.org",
+    "repo": "https://github.com/microsoft/TypeScript",
+    "project_suitability": [
+      "대규모 팀에서 개발하는 복잡한 애플리케이션",
+      "타입 안정성이 중요한 엔터프라이즈 프로젝트",
+      "장기적 유지보수가 필요한 시스템",
+      "API와 데이터 모델이 복잡한 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "JavaScript 경험이 필요하며, 타입 시스템과 제네릭 개념 이해가 중요합니다."
+    },
+    "updated_at": "2025-09-17T00:40:42.258"
+  },
+  {
+    "name": "Java",
+    "slug": "java",
+    "category": "language",
+    "description": "객체 지향 프로그래밍 언어",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    "popularity": 89,
+    "learning_resources": [],
+    "ai_explanation": "Java는 Sun Microsystems(현 Oracle)에서 개발한 객체 지향 프로그래밍 언어입니다. \"Write Once, Run Anywhere\" 철학으로 JVM을 통해 플랫폼 독립성을 제공합니다. 강력한 타입 시스템과 메모리 관리, 멀티스레딩 지원으로 대규모 엔터프라이즈 애플리케이션 개발에 널리 사용됩니다.",
+    "homepage": "https://www.oracle.com/java",
+    "repo": "https://github.com/openjdk/jdk",
+    "project_suitability": [],
+    "learning_difficulty": null,
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "Docker",
+    "slug": "docker",
+    "category": "devops",
+    "description": "컨테이너화 플랫폼",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "popularity": 88,
+    "learning_resources": [],
+    "ai_explanation": "Docker는 애플리케이션을 컨테이너화하여 어디서나 동일하게 실행할 수 있게 해주는 플랫폼입니다. 가상화보다 가볍고 빠르며, 개발, 테스트, 배포 환경을 일관성 있게 관리할 수 있습니다. 마이크로서비스 아키텍처와 CI/CD 파이프라인에서 핵심적인 역할을 하며, 클라우드 네이티브 개발의 필수 도구입니다.",
+    "homepage": "https://www.docker.com",
+    "repo": "https://github.com/docker/docker-ce",
+    "project_suitability": [
+      "컨테이너 기반 배포 환경",
+      "CI/CD 파이프라인 구축",
+      "마이크로서비스 아키텍처",
+      "개발 환경 표준화 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "컨테이너 개념과 리눅스 기초 지식이 도움됩니다."
+    },
+    "updated_at": "2025-09-17T00:42:00.191"
+  },
+  {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "category": "database",
+    "description": "오픈 소스 관계형 데이터베이스",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "popularity": 86,
+    "learning_resources": [],
+    "ai_explanation": "PostgreSQL은 확장 가능성과 표준 준수를 강조하는 오픈소스 관계형 데이터베이스입니다. ACID 속성을 완전히 지원하며, 복잡한 쿼리, 외래 키, 트리거, 뷰 등 고급 기능을 제공합니다. JSON 데이터 타입 지원과 확장 기능을 통해 NoSQL의 장점도 활용할 수 있습니다.",
+    "homepage": "https://www.postgresql.org",
+    "repo": "https://github.com/postgres/postgres",
+    "project_suitability": [],
+    "learning_difficulty": null,
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "Vue.js",
+    "slug": "vue",
+    "category": "frontend",
+    "description": "프로그레시브 JavaScript 프레임워크",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    "popularity": 85,
+    "learning_resources": [],
+    "ai_explanation": "Vue.js는 Evan You가 개발한 프로그레시브 JavaScript 프레임워크입니다. 학습 곡선이 완만하고 기존 프로젝트에 점진적으로 도입할 수 있어 접근성이 뛰어납니다. 템플릿 기반 문법과 양방향 데이터 바인딩을 제공하며, 컴포지션 API를 통해 로직을 재사용 가능한 형태로 구성할 수 있습니다.",
+    "homepage": "https://vuejs.org",
+    "repo": "https://github.com/vuejs/vue",
+    "project_suitability": [
+      "기존 프로젝트에 점진적 도입",
+      "중소규모 웹 애플리케이션",
+      "프롯타이핑 및 빠른 개발",
+      "학습용 프레임워크 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "초중급",
+      "stars": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "description": "직관적인 문법으로 프레임워크 입문자에게 적합합니다."
+    },
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql",
+    "category": "database",
+    "description": "인기 있는 오픈 소스 관계형 데이터베이스",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "popularity": 84,
+    "learning_resources": [],
+    "ai_explanation": "MySQL은 Oracle에서 개발하고 유지하는 오픈소스 관계형 데이터베이스 관리 시스템입니다. 빠른 성능과 안정성으로 웹 애플리케이션에서 널리 사용되며, LAMP 스택의 핵심 구성 요소입니다. 사용하기 쉽고 다양한 스토리지 엔진을 지원하여 다양한 요구사항에 맞춰 최적화할 수 있습니다.",
+    "homepage": "https://www.mysql.com",
+    "repo": "https://github.com/mysql/mysql-server",
+    "project_suitability": [],
+    "learning_difficulty": null,
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "Spring",
+    "slug": "spring",
+    "category": "backend",
+    "description": "Java 기반 애플리케이션 프레임워크",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    "popularity": 82,
+    "learning_resources": [],
+    "ai_explanation": "Spring은 Java 기반의 오픈소스 애플리케이션 프레임워크입니다. 의존성 주입(DI)과 관점 지향 프로그래밍(AOP)을 핵심으로 하며, Spring Boot를 통해 복잡한 설정 없이도 빠르게 애플리케이션을 개발할 수 있습니다. 엔터프라이즈급 애플리케이션 개발에 필요한 다양한 기능과 모듈을 제공합니다.",
+    "homepage": "https://spring.io",
+    "repo": "https://github.com/spring-projects/spring-framework",
+    "project_suitability": [],
+    "learning_difficulty": null,
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "MongoDB",
+    "slug": "mongodb",
+    "category": "database",
+    "description": "NoSQL 문서 기반 데이터베이스",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "popularity": 81,
+    "learning_resources": [],
+    "ai_explanation": "MongoDB는 문서 지향 NoSQL 데이터베이스입니다. JSON과 유사한 BSON 형식으로 데이터를 저장하여 스키마의 유연성을 제공하며, 수평적 확장이 용이합니다. 복잡한 JOIN 없이도 연관된 데이터를 함께 저장할 수 있어 개발 속도가 빠르고, 대용량 데이터 처리에 적합합니다.",
+    "homepage": "https://www.mongodb.com",
+    "repo": "https://github.com/mongodb/mongo",
+    "project_suitability": [],
+    "learning_difficulty": null,
+    "updated_at": "2025-09-16T23:30:02.695"
+  },
+  {
+    "name": "C++",
+    "slug": "cplusplus",
+    "category": "language",
+    "description": "하드웨어에 가까운 제어와 최고 수준 성능을 제공하는 범용 시스템 프로그래밍 언어. 현대 C++(C++17/20/23)의 제로코스트 추상화와 풍부한 표준 라이브러리로 게임, 금융, 임베디드, HPC까지 폭넓게 활용된다.",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    "popularity": 40,
+    "learning_resources": [
+      {
+        "url": "https://en.cppreference.com/",
+        "type": "documentation",
+        "title": "cppreference: C++ 표준 라이브러리 참조"
+      },
+      {
+        "url": "https://isocpp.org/",
+        "type": "documentation",
+        "title": "ISO C++ 공식 사이트 및 뉴스"
+      },
+      {
+        "url": "https://learn.microsoft.com/ko-kr/cpp/",
+        "type": "tutorial",
+        "title": "Microsoft Learn: C++ 기초와 실습"
+      },
+      {
+        "url": "https://isocpp.github.io/CppCoreGuidelines/",
+        "type": "documentation",
+        "title": "C++ 코어 가이드라인"
+      },
+      {
+        "url": "https://www.youtube.com/c/CppNowConference",
+        "type": "video",
+        "title": "C++Now 강연 모음"
+      }
+    ],
+    "ai_explanation": "C++는 성능과 예측 가능한 지연을 중시하는 시스템 개발에 최적화된 언어다. RAII와 제로코스트 추상화, 템플릿·컨셉트로 고수준 표현력을 확보하면서도 메모리·동시성 제어를 세밀히 다룬다. C++20/23은 모듈, 코루틴, 범위, expected·print 등으로 생산성과 안전성을 개선했다. 단, 빌드·의존성 관리와 미정의 동작(UB) 대응에는 숙련이 필요하다.",
+    "homepage": "https://social.msdn.microsoft.com/Forums/SECURITY/en-US/72da6400-7a22-4bcc-b8d3-6423086289f0/visual-c-2015-redistributable-setup-failed-0x80070666-x64-amp-x86?forum=vssetup",
+    "repo": null,
+    "project_suitability": [
+      "AAA 게임 엔진과 실시간 렌더링 시스템",
+      "초저지연 금융 트레이딩·리스크 계산 엔진",
+      "임베디드·IoT 펌웨어, 드라이버, RTOS 애플리케이션",
+      "고성능 시뮬레이션·과학 계산·HPC 파이프라인",
+      "크로스플랫폼 데스크톱·네이티브 애플리케이션"
+    ],
+    "learning_difficulty": {
+      "label": "고급",
+      "stars": [
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "description": "문법이 방대하고 메모리·동시성 제어가 어렵다. 현대 문법과 도구 숙련이 필요하다."
+    },
+    "updated_at": "2025-09-18T17:43:52.561"
+  },
+  {
+    "name": "Elm",
+    "slug": "elm",
+    "category": "language",
+    "description": "브라우저용 정적 타입 함수형 언어로, Elm 아키텍처와 불변성으로 예측 가능한 상태 관리를 제공해 안전한 UI를 구축한다. 자바스크립트와는 포트·커스텀 엘리먼트로 상호작용한다.",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Elm_logo.svg",
+    "popularity": 40,
+    "learning_resources": [
+      {
+        "url": "https://guide.elm-lang.org/",
+        "type": "tutorial",
+        "title": "The Elm Guide 공식 튜토리얼"
+      },
+      {
+        "url": "https://package.elm-lang.org/",
+        "type": "documentation",
+        "title": "Elm 패키지 문서 포털"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=IcgmSRJHu_8",
+        "type": "video",
+        "title": "Richard Feldman: 불가능한 상태 없애기"
+      },
+      {
+        "url": "https://www.manning.com/books/elm-in-action",
+        "type": "book",
+        "title": "Elm in Action (영문서)"
+      }
+    ],
+    "ai_explanation": "Elm은 자바스크립트로 컴파일되는 순수 함수형 언어다. 강력한 타입 시스템, 불변 데이터, 단방향 흐름(Elm Architecture)로 런타임 예외와 상태 복잡도를 줄인다. 컴파일러 오류 메시지가 친절해 리팩터링이 쉽고 빌드가 단순하다. 반면 생태계와 릴리스 속도는 느리며, 서드파티 JS 연동은 포트/커스텀 엘리먼트가 필요해 초기 비용이 있다.",
+    "homepage": "https://package.elm-lang.org/",
+    "repo": "https://github.com/elm",
+    "project_suitability": [
+      "복잡한 폼과 검증이 많은 내부 업무용 SPA",
+      "장기 유지보수가 중요한 데이터 대시보드",
+      "안정성이 최우선인 금융·의료 웹 프런트엔드",
+      "소규모 팀의 점진적 도입이 필요한 기존 JS 웹앱",
+      "교육용 함수형 프런트엔드 학습 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "함수형 패러다임과 포트 기반 JS 연동 개념이 관건"
+    },
+    "updated_at": "2025-09-18T17:49:05.254"
+  },
+  {
+    "name": "Delphi",
+    "slug": "delphi",
+    "category": "tool",
+    "description": "Windows 중심의 상용 RAD 통합 개발환경으로, Object Pascal 컴파일러와 시각적 컴포넌트(VCL·FireMonkey)를 제공해 데스크톱·모바일 네이티브 앱을 빠르게 구축하고 장기 유지보수에 유리한 생산성을 제공한다.",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/delphi/delphi-original.svg",
+    "popularity": 40,
+    "learning_resources": [
+      {
+        "url": "https://docwiki.embarcadero.com/RADStudio/Athens/en/Main_Page",
+        "type": "documentation",
+        "title": "Delphi/RAD Studio 공식 문서(DocWiki)"
+      },
+      {
+        "url": "https://learndelphi.org",
+        "type": "tutorial",
+        "title": "LearnDelphi.org 입문 튜토리얼"
+      },
+      {
+        "url": "https://www.youtube.com/@EmbarcaderoTechNet",
+        "type": "video",
+        "title": "Embarcadero 공식 유튜브 채널"
+      },
+      {
+        "url": "https://lp.embarcadero.com/object-pascal-handbook",
+        "type": "book",
+        "title": "Object Pascal 핸드북(마르코 칸투)"
+      }
+    ],
+    "ai_explanation": "Delphi는 Embarcadero의 상용 통합 개발환경으로 Object Pascal 기반 컴파일러, 폼 디자이너, 디버거와 풍부한 VCL/FireMonkey 컴포넌트를 제공한다. Windows LOB와 레거시 현대화에 강하며 단일 코드베이스로 iOS/Android/macOS도 지원한다. Delphi 12 Athens는 High DPI, LSP, 64비트/ARM 지원을 개선했다. 단, 라이선스 비용과 작은 생태계, 모바일 최신 API 추적 속도는 유의할 점이다.",
+    "homepage": "https://delphi.embarcadero.com/project/delphi-7/",
+    "repo": "https://github.com/topics/delphi",
+    "project_suitability": [
+      "대규모 기업용 Windows 데스크톱 LOB 애플리케이션",
+      "기존 Delphi/VCL 시스템의 기능 확장과 현대화",
+      "하드웨어·시리얼 통신 기반 산업용/HMI/SCADA 솔루션",
+      "오프라인 중심 POS·물류·현장 업무용 네이티브 앱",
+      "단일 코드베이스의 크로스플랫폼 데스크톱/모바일"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "문법은 쉽지만 컴포넌트 모델, 메모리·스레딩, VCL·FireMonkey 이해가 필요."
+    },
+    "updated_at": "2025-09-26T03:11:17.564"
+  },
+  {
+    "name": "Ruby",
+    "slug": "ruby",
+    "category": "language",
+    "description": "간결한 문법과 높은 생산성을 지향하는 동적 객체지향 언어. 웹 백엔드와 자동화 스크립트에 강하며, 젬 생태계와 Bundler로 의존성 관리를 단순화하고 Rails와 결합해 빠른 제품 개발에 적합하다.",
+    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+    "popularity": 40.0,
+    "learning_resources": [
+      {
+        "url": "https://www.ruby-lang.org/ko/documentation/",
+        "type": "documentation",
+        "title": "루비 공식 문서 모음"
+      },
+      {
+        "url": "https://docs.ruby-lang.org/en/",
+        "type": "documentation",
+        "title": "루비 API 레퍼런스(영문)"
+      },
+      {
+        "url": "http://rubykoans.com/",
+        "type": "tutorial",
+        "title": "루비 코안으로 테스트 주도 학습"
+      },
+      {
+        "url": "https://exercism.org/tracks/ruby",
+        "type": "tutorial",
+        "title": "Exercism 루비 트랙 실습"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=t_ispmWmdjY",
+        "type": "video",
+        "title": "freeCodeCamp 루비 풀코스(영문)"
+      },
+      {
+        "url": "https://www.manning.com/books/the-well-grounded-rubyist-third-edition",
+        "type": "book",
+        "title": "웰그라운디드 루비스트 3판(영문)"
+      }
+    ],
+    "ai_explanation": "Ruby는 읽기 쉬운 문법과 일관된 객체지향 철학으로 빠른 개발 사이클을 제공한다. 방대한 젬 생태계와 Bundler로 재사용이 용이하며, Rails와의 시너지가 크다. Ruby 3에서 YJIT로 성능이 개선되고 Ractor로 병렬성이 보강됐지만, GVL 특성상 CPU 집약적 작업·초저지연 초고동시성에는 한계가 있다. 웹 백엔드, 자동화 스크립트, CLI 제작에 실용적이다.",
+    "homepage": "https://www.ruby-lang.org/en/downloads/",
+    "repo": "https://github.com/ruby/ruby",
+    "project_suitability": [
+      "MVP 웹서비스와 스타트업 제품 초기 개발",
+      "CRUD 중심의 백오피스·사내 업무용 도구",
+      "REST/GraphQL API 서버(중간 트래픽 규모)",
+      "배치 처리·스크립팅·DevOps 자동화 도구",
+      "경량 CLI 유틸리티와 데이터 파이프라인"
+    ],
+    "learning_difficulty": {
+      "label": "초급",
+      "stars": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "description": "문법은 쉽지만 성능·동시성 최적화에는 추가 학습 필요"
+    },
+    "updated_at": "2025-09-29T04:42:49.129635+00:00"
+  }
+]
