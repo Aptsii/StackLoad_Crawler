@@ -1,19 +1,21 @@
+import argparse
 import json
 import os
 import requests
 from openai import OpenAI
 import datetime
 from bs4 import BeautifulSoup
-from ddgs import DDGS
+from google import genai
+from google.genai import types
 from supabase import create_client, Client
 from dotenv import load_dotenv
 import time
 import re
 from urllib.parse import urljoin, urlparse
+import asyncio
+from crawl4ai import AsyncWebCrawler
 import sys
 import codecs
-
-# UTF-8 출력을 위한 환경 설정
 def setup_utf8_output():
     """UTF-8 출력을 위한 환경 설정"""
     if os.name == 'nt':  # Windows
@@ -42,13 +44,14 @@ load_dotenv()
 
 # --- API Key & Supabase Setup ---
 try:
-    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-    if not OPENAI_API_KEY:
-        print("[WARNING] OPENAI_API_KEY not set. Using dummy client.")
-        openai_client = None
+    GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
+    if not GEMINI_API_KEY:
+        print("[WARNING] GEMINI_API_KEY not set. AI enhancement will be skipped.")
+        genai_model = None
     else:
-        openai_client = OpenAI(api_key=OPENAI_API_KEY)
-        print("[SUCCESS] OpenAI API Key configured.")
+        # google-genai SDK 초기화
+        genai_client = genai.Client(api_key=GEMINI_API_KEY)
+        print("[SUCCESS] Gemini API configured with Google Search Grounding (google-genai SDK).")
 
     SUPABASE_URL = os.environ.get('SUPABASE_URL')
     SUPABASE_KEY = os.environ.get('SUPABASE_KEY')
@@ -67,235 +70,225 @@ except Exception as e:
 # --- Dynamic Tech Stack Discovery ---
 
 def discover_trending_technologies():
-    """포괄적인 기술 스택 수집 - 빠른 수집 방식"""
-    print("[SEARCH] Discovering comprehensive technologies...")
+    """Gemini Search를 이용한 최신 기술 트렌드 수집"""
+    print("[SEARCH] Discovering trending technologies via Gemini Search...")
 
-    discovered_techs = set()
+    if not genai_client:
+        print("[WARNING] Gemini not available. Using fallback list.")
+        return get_comprehensive_base_technologies()
 
-    # 1. GitHub 트렌딩에서 수집 (빠름)
-    github_techs = get_github_trending_languages()
-    discovered_techs.update(github_techs)
-
-    # 2. Stack Overflow Survey에서 수집 (빠름, 검색량 줄임)
-    stackoverflow_techs = get_stackoverflow_popular_techs()
-    discovered_techs.update(stackoverflow_techs)
-
-    # 3. 포괄적 기본 기술 목록 추가 (매우 빠름)
-    base_techs = get_comprehensive_base_technologies()
-    discovered_techs.update(base_techs)
-
-    # 4. Wikipedia에서 기술 목록 수집 (빠름, 검색량 줄임)
-    wiki_techs = get_technologies_from_wikipedia()
-    discovered_techs.update(wiki_techs)
-
-    print(f"[INFO] 총 {len(discovered_techs)}개의 기술 스택 발견")
-    return list(discovered_techs)
-
-def get_github_trending_languages():
-    """GitHub 트렌딩 언어들 수집"""
-    print("  - [GITHUB] GitHub 트렌딩에서 수집 중...")
-    techs = set()
+    prompt = """
+    Find 60 trending and popular technology stacks in 2024-2025.
+    Focus on a mix of "Industry Standards" and "Emerging Trends".
+    
+    Include these specific categories:
+    - AI Agents & LLM Ops (e.g., LangChain, AutoGPT, Pinecone)
+    - Modern Web Frameworks (e.g., Next.js, Remix, SvelteKit)
+    - Rust Ecosystem (e.g., Tauri, Actix, Axum)
+    - Edge Computing & Serverless (e.g., Cloudflare Workers, Bun)
+    - Next-Gen Databases (e.g., Supabase, Neon, SurrealDB)
+    - DevOps & Infrastructure (e.g., Kubernetes, Terraform, Pulumi)
+    
+    Return ONLY a JSON array of strings. Example: ["Tech1", "Tech2", ...]
+    """
 
     try:
-        # GitHub 트렌딩 API는 공식적으로 없으므로 웹 스크래핑
-        ddgs = DDGS()
-
-        # GitHub 트렌딩 검색
-        search_results = ddgs.text("site:github.com/trending programming languages", max_results=10)
-
-        # 일반적인 프로그래밍 언어들 추가
-        popular_languages = [
-            'JavaScript', 'Python', 'TypeScript', 'Java', 'Go', 'Rust',
-            'C++', 'C#', 'PHP', 'Ruby', 'Swift', 'Kotlin', 'Dart'
-        ]
-        techs.update(popular_languages)
-
-        # 인기 프레임워크들
-        popular_frameworks = [
-            'React', 'Vue.js', 'Angular', 'Node.js', 'Express.js', 'Django',
-            'Flask', 'Spring Boot', 'Laravel', 'Rails', 'Next.js', 'Nuxt.js'
-        ]
-        techs.update(popular_frameworks)
-
+        response = genai_client.models.generate_content(
+            model='gemini-2.0-flash-lite',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())]
+            )
+        )
+        text = response.text.strip()
+        
+        # JSON 파싱
+        if text.startswith('```json'):
+            text = text[7:]
+        if text.startswith('```'):
+            text = text[3:]
+        if text.endswith('```'):
+            text = text[:-3]
+            
+        techs = json.loads(text.strip())
+        
+        # 기본 기술 목록도 추가하여 풍부하게 유지
+        base_techs = get_comprehensive_base_technologies()
+        combined_techs = list(set(techs + base_techs))
+        
+        print(f"[INFO] Discovered {len(combined_techs)} technologies.")
+        return combined_techs
+        
     except Exception as e:
-        safe_print(f"    [ERROR] GitHub trending collection failed: {e}")
-
-    return list(techs)
-
-def get_stackoverflow_popular_techs():
-    """Stack Overflow에서 인기 기술들 수집"""
-    print("  - [SO] Stack Overflow에서 수집 중...")
-    techs = set()
-
-    try:
-        ddgs = DDGS()
-
-        # Stack Overflow 개발자 설문조사 관련 검색 (속도 최적화)
-        search_queries = [
-            "programming languages list complete",
-            "database technologies all types",
-            "web frameworks comprehensive list",
-            "mobile development tools all platforms"
-        ]
-
-        for query in search_queries:
-            results = ddgs.text(query, max_results=3)  # 5->3으로 줄임
-            # 검색 결과에서 기술명 추출 (간단한 패턴 매칭)
-            for result in results:
-                text = result.get('body', '') + ' ' + result.get('title', '')
-                extracted_techs = extract_tech_names_from_text(text)
-                techs.update(extracted_techs)
-
-            time.sleep(0.5)  # 1초->0.5초로 줄임
-
-    except Exception as e:
-        safe_print(f"    [ERROR] Stack Overflow collection failed: {e}")
-
-    return list(techs)
-
-
-def extract_tech_names_from_text(text):
-    """텍스트에서 기술명 추출"""
-    tech_patterns = [
-        # 프로그래밍 언어
-        r'\b(?:JavaScript|TypeScript|Python|Java|Go|Rust|C\+\+|C#|PHP|Ruby|Swift|Kotlin|Dart|Scala|R|MATLAB)\b',
-        # 웹 프레임워크
-        r'\b(?:React|Vue\.js|Angular|Node\.js|Express\.js|Django|Flask|Spring|Laravel|Rails|Next\.js|Nuxt\.js|Svelte)\b',
-        # 데이터베이스
-        r'\b(?:PostgreSQL|MySQL|MongoDB|Redis|Elasticsearch|SQLite|MariaDB|Oracle|SQL Server)\b',
-        # 클라우드/DevOps
-        r'\b(?:AWS|Azure|Google Cloud|Docker|Kubernetes|Terraform|Jenkins|Git|GitHub|GitLab)\b',
-        # 모바일
-        r'\b(?:React Native|Flutter|Xamarin|Ionic|Cordova)\b'
-    ]
-
-    extracted = set()
-    for pattern in tech_patterns:
-        matches = re.findall(pattern, text, re.IGNORECASE)
-        extracted.update(matches)
-
-    return extracted
+        print(f"[ERROR] Discovery failed: {e}")
+        return get_comprehensive_base_technologies()
 
 def get_comprehensive_base_technologies():
-    """기본적으로 포함해야 할 다양한 기술들"""
-    safe_print("  - [BASE] Comprehensive base technology list adding...")
-    base_techs = [
-        # 레거시/안정적 기술
-        'COBOL', 'Fortran', 'Ada', 'Delphi', 'Visual Basic', 'Pascal', 'Assembly',
-        # 니치/전문 기술
-        'R', 'MATLAB', 'Haskell', 'Erlang', 'Prolog', 'Clojure', 'F#', 'OCaml',
-        # 게임/그래픽
-        'Unity', 'Unreal Engine', 'Blender', 'Maya', 'Godot', 'GameMaker', 'Construct',
-        # 임베디드/IoT
-        'Arduino', 'Raspberry Pi', 'FreeRTOS', 'Zephyr', 'Mbed OS', 'PlatformIO',
-        # 과학/연구
-        'Jupyter', 'Octave', 'SciPy', 'SPSS', 'Stata', 'SAS', 'Mathematica',
-        # 모바일
-        'Xamarin', 'Ionic', 'Cordova', 'PhoneGap', 'Titanium',
-        # 웹 특화
-        'Svelte', 'Elm', 'PureScript', 'ClojureScript', 'ReasonML',
-        # 데이터베이스
-        'CouchDB', 'RethinkDB', 'OrientDB', 'ArangoDB', 'InfluxDB', 'TimescaleDB',
-        # DevOps/인프라
-        'Ansible', 'Puppet', 'Chef', 'SaltStack', 'Vagrant', 'Packer',
-        # 빅데이터
-        'Hadoop', 'Spark', 'Kafka', 'Storm', 'Flink', 'Airflow',
-        # 블록체인
-        'Solidity', 'Vyper', 'Web3.js', 'Ethers.js'
+    """기본적으로 포함해야 할 다양한 기술들 (Fallback)"""
+    return [
+        'Python', 'JavaScript', 'TypeScript', 'Java', 'Go', 'Rust', 'C++',
+        'React', 'Next.js', 'Vue.js', 'Angular', 'Svelte',
+        'Node.js', 'Django', 'FastAPI', 'Spring Boot',
+        'PostgreSQL', 'MongoDB', 'Redis', 'Supabase',
+        'Docker', 'Kubernetes', 'AWS', 'Terraform',
+        'Flutter', 'React Native', 'Swift', 'Kotlin',
+        'TensorFlow', 'PyTorch', 'LangChain', 'OpenAI'
     ]
-    return base_techs
-
-def get_technologies_from_wikipedia():
-    """Wikipedia에서 기술 목록 수집"""
-    print("  - [WIKI] Wikipedia에서 기술 목록 수집 중...")
-    techs = set()
-
-    try:
-        ddgs = DDGS()
-
-        # Wikipedia 기반 포괄적 검색 (속도 최적화)
-        wiki_queries = [
-            "site:en.wikipedia.org \"List of programming languages\"",
-            "site:en.wikipedia.org \"List of database management systems\"",
-            "site:en.wikipedia.org \"Web framework comparison\""
-        ]
-
-        for query in wiki_queries:
-            results = ddgs.text(query, max_results=2)  # 3->2로 줄임
-            for result in results:
-                text = result.get('body', '') + ' ' + result.get('title', '')
-                extracted_techs = extract_tech_names_from_text(text)
-                techs.update(extracted_techs)
-
-            time.sleep(0.3)  # 0.5->0.3초로 줄임
-
-    except Exception as e:
-        print(f"    [ERROR] Wikipedia 수집 실패: {e}")
-
-    return list(techs)
 
 def create_slug(name):
     """기술명을 슬러그로 변환"""
     return name.lower().replace(' ', '-').replace('.', 'dot').replace('#', 'sharp').replace('+', 'plus')
 
 def get_tech_popularity_score(tech_name):
-    """기술의 인기도 점수 계산 (1-100) - 속도 최적화"""
+    """기술의 인기도 점수 계산 (Gemini Search Grounding)"""
+    if not genai_client:
+        return 50
+
+    prompt = f"""
+    Determine the popularity score of '{tech_name}' in 2024-2025 on a scale of 0 to 100.
+    
+    STRICT SCORING RUBRIC (Do not inflate scores):
+    - 90-100: Ubiquitous / Industry Standard (e.g., Python, React, AWS, Docker). Everyone knows it.
+    - 75-89:  Mainstream / High Demand (e.g., TypeScript, Next.js, Kubernetes, Redis). Widely used in production.
+    - 50-74:  Growing / Stable Niche (e.g., Svelte, Rust, Supabase, Flutter). Strong community but not universal.
+    - 30-49:  New / Declining / Niche (e.g., Bun, jQuery, specialized libs). Early stage or legacy.
+    - 0-29:   Obsolete / Unknown / Hobbyist only.
+    
+    Consider: GitHub stars, Job market demand, Stack Overflow trends, and Ecosystem size.
+    BE CRITICAL. If a tech is new or niche, give it a lower score (e.g., 40-60).
+    
+    Return ONLY the integer number. Example: 85
+    """
+    
     try:
-        ddgs = DDGS()
-
-        # 검색 결과 수로 인기도 측정 (검색량 줄임)
-        search_queries = [
-            f"{tech_name} programming tutorial",
-            f"{tech_name} github repositories"
-        ]
-
-        total_score = 0
-        for query in search_queries:
-            results = ddgs.text(query, max_results=20)  # 50->20으로 줄임
-            total_score += len(results) * 10
-            time.sleep(0.2)  # 0.5->0.2초로 줄임
-
-        # 0-100 범위로 정규화
-        normalized_score = total_score / 10  # 계산 공식 조정
-        return round(min(100, max(10, normalized_score)), 1)
-
+        response = genai_client.models.generate_content(
+            model='gemini-2.0-flash-lite',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())]
+            )
+        )
+        score_text = response.text.strip()
+        # 숫자만 추출
+        import re
+        match = re.search(r'\d+', score_text)
+        if match:
+            score = int(match.group())
+            return min(100, max(0, score))
+        return 50
     except Exception as e:
-        print(f"    [WARNING] {tech_name} 인기도 계산 실패: {e}")
-        return 50  # 기본값
+        print(f"    [WARNING] Popularity check failed: {e}")
+        return 50
 
-def enhance_with_ai(tech_name, scraped_info):
-    """AI로 기술 정보 향상"""
-    print(f"    - [AI] Enhancing '{tech_name}' data with AI...")
 
-    # OpenAI 클라이언트가 없으면 기본값 반환
-    if not openai_client:
-        print(f"        [WARNING] OpenAI client not available. Using default data for {tech_name}")
+async def crawl_url(url):
+    """Crawl4AI를 사용하여 URL의 콘텐츠를 마크다운으로 가져옴"""
+    if not url:
+        return ""
+    
+    # URL 보정 (프로토콜이 없으면 https:// 추가)
+    if not url.startswith(('http://', 'https://', 'file://')):
+        url = 'https://' + url
+    
+    print(f"    - [CRAWL] Crawling {url}...")
+    try:
+        async with AsyncWebCrawler(verbose=False) as crawler:
+            result = await crawler.arun(url=url)
+            if result.success:
+                # 너무 긴 콘텐츠는 자름 (토큰 제한 고려)
+                content = result.markdown
+                if len(content) > 20000:
+                    content = content[:20000] + "...(truncated)"
+                return content
+            else:
+                print(f"        [WARNING] Crawl failed: {result.error_message}")
+                return ""
+    except Exception as e:
+        print(f"        [ERROR] Crawl exception: {e}")
+        return ""
+
+def get_best_logo_url(tech_name, homepage_url):
+    """최적의 로고 URL 찾기 (SVG Only: Devicon -> Simple Icons -> Gemini Search)"""
+    
+    slug = create_slug(tech_name)
+
+    # 1. Devicon (SVG)
+    devicon_url = f"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{slug}/{slug}-original.svg"
+    try:
+        response = requests.head(devicon_url, timeout=5, headers={'User-Agent': 'Mozilla/5.0'})
+        if response.status_code == 200:
+            return devicon_url
+    except Exception:
+        pass
+
+    # 2. Simple Icons (SVG) - 방대한 브랜드 아이콘 라이브러리
+    simple_icons_url = f"https://cdn.simpleicons.org/{slug}"
+    try:
+        response = requests.head(simple_icons_url, timeout=5, headers={'User-Agent': 'Mozilla/5.0'})
+        if response.status_code == 200:
+            return simple_icons_url
+    except Exception:
+        pass
+
+    # 3. Gemini Search로 SVG 로고 찾기 (Strict SVG)
+    if genai_client:
+        try:
+            prompt = f"Find a direct URL for the official SVG logo of '{tech_name}'. Return ONLY the URL string. It MUST be an .svg file."
+            response = genai_client.models.generate_content(
+                model='gemini-2.0-flash-lite',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    tools=[types.Tool(google_search=types.GoogleSearch())]
+                )
+            )
+            url = response.text.strip()
+            if url.startswith('http') and '.svg' in url:
+                return url
+        except Exception:
+            pass
+
+    return ""
+
+def enhance_with_ai(tech_name, scraped_info, crawled_content=""):
+    """AI로 기술 정보 향상 (Gemini 사용)"""
+    print(f"    - [AI] Enhancing '{tech_name}' data with AI (Gemini)...")
+
+    # Gemini 모델이 없으면 기본값 반환
+    if not genai_client:
+        print(f"        [WARNING] Gemini model not available. Using default data for {tech_name}")
         return {
             "description": f"{tech_name}은(는) 인기있는 개발 기술입니다.",
             "category": "language",
-            "logoUrl": None,
+            "description": f"{tech_name}은(는) 인기있는 개발 기술입니다.",
+            "category": "language",
             "color": "#6B7280",
             "learningResources": ["공식 문서", "온라인 튜토리얼", "커뮤니티 포럼"]
         }
 
+    # 크롤링된 콘텐츠가 있으면 프롬프트에 포함
+    context_str = f"수집된 정보: {scraped_info}"
+    if crawled_content:
+        context_str += f"\n\n[공식 홈페이지 콘텐츠 요약]\n{crawled_content[:5000]}"
+
     prompt = f"""
     ## 역할 및 전문성
-    당신은 15년 경력의 수석 소프트웨어 아키텍트이자 기술 컨설턴트입니다. 수백 개의 프로젝트를 통해 다양한 기술 스택의 실무 적용과 성능 최적화 경험을 보유하고 있으며, Fortune 500 기업부터 스타트업까지 기술 선택과 아키텍처 설계를 지원해왔습니다.
+    당신은 15년 경력의 CTO이자 수석 소프트웨어 아키텍트입니다. 기술의 장단점을 냉철하게 분석하고, 비즈니스와 엔지니어링 관점에서 최적의 기술 스택을 제안하는 능력이 탁월합니다.
 
     ## 분석 대상 기술
     기술명: {tech_name}
-    수집된 정보: {scraped_info}
+    {context_str}
 
     ## 분석 목표
-    개발자들이 기술 선택 시 올바른 의사결정을 할 수 있도록 정확하고 실용적인 정보를 제공하세요. 단순한 정의가 아닌 실무 관점에서의 깊이 있는 분석이 필요합니다.
-
+    개발자와 의사결정권자가 이 기술을 도입할지 판단할 수 있도록, 단순한 소개가 아닌 "비판적이고 실무적인 분석"을 제공하세요. 마케팅 용어보다는 실제 엔지니어링 가치에 집중하세요.
+    
+    (이하 생략, 기존 프롬프트와 동일)
     ## 출력 형식
-    다음 JSON 스키마에 정확히 맞춰 모든 문자열을 한국어로 작성하세요:
+    다음 JSON 스키마에 정확히 맞춰 모든 문자열을 한국어로 작성하세요. 마크다운 코드 블록 없이 순수 JSON만 출력하세요:
 
     {{
         "description": "기술의 핵심 정의와 주요 목적을 명확하고 간결하게 설명 (20-30자)",
         "category": "다음 중 정확히 하나만 선택: frontend, backend, database, mobile, devops, language, framework, library, tool",
-        "ai_explanation": "AI가 기술에 대해 심층적으로 설명하는 글 (200-300자)",
+        "ai_explanation": "AI가 기술에 대해 심층적으로 설명하는 글 (200-300자). 크롤링된 콘텐츠 내용을 적극 반영하여 구체적으로 작성.",
         "project_suitability": [
             "이 기술이 적합한 프로젝트 유형을 설명하는 문자열 배열 (3-5줄)",
             "예: '대규모 실시간 채팅 애플리케이션', '개인 포트폴리오 웹사이트'"
@@ -314,6 +307,7 @@ def enhance_with_ai(tech_name, scraped_info):
             }}
         ]
     }}
+
 
     ## 품질 기준
     1. **정확성**: 검증된 정보만 사용하며, 추측이나 과장 금지
@@ -334,7 +328,7 @@ def enhance_with_ai(tech_name, scraped_info):
     - tool: VS Code, Git, Webpack 등 개발 도구
 
     ## 응답 제약사항
-    - 마크다운 포맷팅 사용 금지
+    - 마크다운 포맷팅 사용 금지 (```json 등 포함 금지)
     - JSON 형식 엄격 준수
     - 모든 문자열 값은 완전한 한국어로 작성 (logoUrl, color 제외)
     - 허위 정보나 과장 금지
@@ -346,53 +340,78 @@ def enhance_with_ai(tech_name, scraped_info):
     """
 
     try:
-        response = openai_client.chat.completions.create(
-            model="gpt-5",  # GPT-5 nano (2025년 9월 기준)
-            messages=[
-                {"role": "system", "content": "You are a world-class software engineering expert."},
-                {"role": "user", "content": prompt}
-            ]
-        )
-
-        json_text = response.choices[0].message.content.strip().replace('```json', '').replace('```', '')
-        return json.loads(json_text)
+        # 재시도 로직 추가 (Rate Limit 대응)
+        max_retries = 3
+        retry_delay = 5
+        
+        for attempt in range(max_retries):
+            try:
+                response = genai_client.models.generate_content(
+                    model='gemini-2.0-flash-lite',
+                    contents=prompt
+                )
+                break
+            except Exception as e:
+                if "429" in str(e) or "Quota exceeded" in str(e):
+                    if attempt < max_retries - 1:
+                        print(f"        [WARNING] Rate limit hit. Retrying in {retry_delay}s... ({attempt+1}/{max_retries})")
+                        time.sleep(retry_delay)
+                        retry_delay *= 2  # 지수 백오프
+                        continue
+                raise e
+        
+        # 응답 텍스트 정제 (마크다운 코드 블록 제거)
+        json_text = response.text.strip()
+        if json_text.startswith('```json'):
+            json_text = json_text[7:]
+        if json_text.startswith('```'):
+            json_text = json_text[3:]
+        if json_text.endswith('```'):
+            json_text = json_text[:-3]
+            
+        return json.loads(json_text.strip())
     except Exception as e:
         print(f"        [ERROR] AI enhancement failed: {e}")
         return None
 
 def search_and_scrape(tech_name):
-    """기술에 대한 정보 스크래핑"""
-    print(f"    - [SCRAPE] Scraping info for '{tech_name}'...")
-    scraped_info = {}
+    """기술에 대한 정보 스크래핑 (Gemini Search Grounding)"""
+    print(f"    - [SEARCH] Finding info for '{tech_name}'...")
+    
+    if not genai_client:
+        return {}
+
+    prompt = f"""
+    Find the official homepage URL and the main GitHub repository URL for '{tech_name}'.
+    
+    Return ONLY a JSON object. Example:
+    {{
+        "homepage": "https://...",
+        "repo": "https://github.com/..."
+    }}
+    If not found, use null.
+    """
 
     try:
-        ddgs = DDGS()
-
-        # 공식 사이트와 GitHub 리포지토리 찾기
-        search_results = ddgs.text(f'{tech_name} official website github', max_results=10)
-
-        for result in search_results:
-            href = result.get('href', '')
-            if 'github.com' in href and not scraped_info.get('repo'):
-                scraped_info['repo'] = href
-            elif 'github.com' not in href and not scraped_info.get('homepage'):
-                # 공식 사이트로 보이는 도메인 우선
-                domain = urlparse(href).netloc
-                if any(keyword in domain.lower() for keyword in [tech_name.lower().replace('.js', ''), tech_name.lower().replace(' ', '')]):
-                    scraped_info['homepage'] = href
-
-        # 홈페이지가 없으면 첫 번째 non-github 링크 사용
-        if not scraped_info.get('homepage'):
-            for result in search_results:
-                href = result.get('href', '')
-                if 'github.com' not in href:
-                    scraped_info['homepage'] = href
-                    break
-
-        return scraped_info
-
+        response = genai_client.models.generate_content(
+            model='gemini-2.0-flash-lite',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())]
+            )
+        )
+        text = response.text.strip()
+        
+        if text.startswith('```json'):
+            text = text[7:]
+        if text.startswith('```'):
+            text = text[3:]
+        if text.endswith('```'):
+            text = text[:-3]
+            
+        return json.loads(text.strip())
     except Exception as e:
-        print(f"    [ERROR] Scraping failed for {tech_name}: {e}")
+        print(f"    [ERROR] Info search failed for {tech_name}: {e}")
         return {}
 
 def save_to_local_json(data):
@@ -436,7 +455,7 @@ def upsert_to_supabase_rpc(data):
             'p_slug': data['slug'],
             'p_category': data.get('category'),
             'p_description': data.get('description'),
-            'p_logo_url': data.get('logo_url'),
+            'p_logo_url': data.get('logoUrl'),
             'p_popularity': int(data.get('popularity', 0)),
             'p_learning_resources': data.get('learning_resources', []),
             'p_ai_explanation': data.get('ai_explanation'),
@@ -455,18 +474,44 @@ def upsert_to_supabase_rpc(data):
         print(f"        [ERROR] RPC upsert failed: {e}")
         return False
 
-def process_technology(tech_name):
-    """개별 기술 처리"""
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# ... (imports remain the same)
+
+async def process_technology(tech_name):
+    """개별 기술 처리 (Async)"""
+    start_time = time.time()
     print(f"\n[PROCESS] Processing: {tech_name}")
 
-    # 기술 정보 스크래핑
+    # 1. 기술 정보 검색 (Gemini Search)
+    t1 = time.time()
     scraped_info = search_and_scrape(tech_name)
+    t2 = time.time()
+    print(f"    [TIME] Searching '{tech_name}': {t2 - t1:.2f}s")
+    
+    # 2. 홈페이지 크롤링 (Crawl4AI)
+    crawled_content = ""
+    if scraped_info.get('homepage'):
+        t_crawl_start = time.time()
+        crawled_content = await crawl_url(scraped_info['homepage'])
+        t_crawl_end = time.time()
+        print(f"    [TIME] Crawling '{tech_name}': {t_crawl_end - t_crawl_start:.2f}s")
 
-    # 인기도 점수 계산
+    # 3. 인기도 점수 계산
+    t3 = time.time()
     popularity = get_tech_popularity_score(tech_name)
+    t4 = time.time()
+    print(f"    [TIME] Popularity '{tech_name}': {t4 - t3:.2f}s")
 
-    # AI로 정보 향상
-    ai_enhanced_data = enhance_with_ai(tech_name, scraped_info)
+    # 4. AI로 정보 향상 (크롤링 데이터 포함)
+    t5 = time.time()
+    ai_enhanced_data = enhance_with_ai(tech_name, scraped_info, crawled_content)
+    t6 = time.time()
+    print(f"    [TIME] AI Enhancement '{tech_name}': {t6 - t5:.2f}s")
+
+    # 5. 로고 URL 결정
+    logo_url = get_best_logo_url(tech_name, scraped_info.get('homepage'))
 
     if ai_enhanced_data:
         now_utc = datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -475,7 +520,7 @@ def process_technology(tech_name):
             'slug': create_slug(tech_name),
             'category': ai_enhanced_data.get('category'),
             'description': ai_enhanced_data.get('description'),
-            'logo_url': ai_enhanced_data.get('logoUrl') or f"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{create_slug(tech_name)}/{create_slug(tech_name)}-original.svg",
+            'logoUrl': logo_url,
             'popularity': popularity,
             'learning_resources': ai_enhanced_data.get('learningResources', []),
             'ai_explanation': ai_enhanced_data.get('ai_explanation'),
@@ -486,62 +531,129 @@ def process_technology(tech_name):
             'updated_at': now_utc
         }
 
-        # Supabase 시도 후 로컬 저장
+        # 5. Supabase 시도 후 로컬 저장
+        t7 = time.time()
         if not upsert_to_supabase_rpc(final_data):
             save_to_local_json(final_data)
         else:
             save_to_local_json(final_data)  # 백업용으로도 저장
-
+        t8 = time.time()
+        print(f"    [TIME] DB Upsert '{tech_name}': {t8 - t7:.2f}s")
+        
+        print(f"    [SUCCESS] {tech_name} Total Time: {t8 - start_time:.2f}s")
         return True
 
     return False
 
-def main():
-    print('[START] Starting Dynamic Tech Stack Discovery System...')
+def get_existing_slugs():
+    """Supabase에서 이미 존재하는 기술들의 slug 목록을 가져옴"""
+    if not supabase:
+        return set()
+    
+    try:
+        # 모든 기술의 slug만 조회 (페이지네이션 처리 필요할 수 있으나 일단 1000개로 제한)
+        response = supabase.table('techs').select('slug').limit(1000).execute()
+        if response.data:
+            return {item['slug'] for item in response.data}
+        return set()
+    except Exception as e:
+        print(f"[WARNING] Failed to fetch existing slugs: {e}")
+        return set()
 
-    # 제한된 모드 체크 (환경변수)
-    limited_mode = os.environ.get('LIMITED_MODE', 'false').lower() == 'true'
-    max_techs = int(os.environ.get('MAX_TECHS', '50'))
+def _resolve_limit(max_techs_arg, force_limited_mode):
+    """환경변수/CLI 조합으로 최대 처리 기술 수 계산"""
+    limited_mode_env = os.environ.get('LIMITED_MODE', 'false').lower() == 'true'
+    limited_mode = force_limited_mode or limited_mode_env
 
-    if limited_mode:
-        safe_print(f"[MODE] Limited mode: max {max_techs} technologies")
+    env_max = os.environ.get('MAX_TECHS')
+    env_max_value = None
+    if env_max:
+        try:
+            env_max_value = int(env_max)
+        except ValueError:
+            safe_print(f"[WARNING] Invalid MAX_TECHS value '{env_max}'. 숫자로 설정해주세요.")
+
+    resolved_max = max_techs_arg if max_techs_arg is not None else env_max_value
+    if resolved_max is not None and resolved_max < 1:
+        safe_print("[WARNING] max techs는 1 이상이어야 합니다. 1로 설정합니다.")
+        resolved_max = 1
+
+    if limited_mode and resolved_max is None:
+        resolved_max = 50  # 과거 기본값 유지
+
+    if resolved_max is not None:
+        safe_print(f"[MODE] 기술 수 제한 활성화: 최대 {resolved_max}개 수집")
+
+    return limited_mode or resolved_max is not None, resolved_max
+
+
+async def main(max_techs=None, force_limited_mode=False, check_only=False):
+    if check_only:
+        print('[CHECK] Checking available technologies...')
+        discovered = discover_trending_technologies()
+        existing = get_existing_slugs()
+        new_techs = [t for t in discovered if create_slug(t) not in existing]
+        print(f"[RESULT] Available: {len(new_techs)}")
+        return
+
+    print('[START] Starting Dynamic Tech Stack Discovery System (Parallel Mode)...')
+
+    limited_mode, max_limit = _resolve_limit(max_techs, force_limited_mode)
 
     # 1단계: 동적으로 인기 기술들 발견
     discovered_technologies = discover_trending_technologies()
 
-    # 제한된 모드일 때 개수 제한
-    if limited_mode:
-        discovered_technologies = discovered_technologies[:max_techs]
+    # 이미 존재하는 기술 필터링
+    print("[CHECK] Checking for existing technologies in database...")
+    existing_slugs = get_existing_slugs()
+    print(f"[INFO] Found {len(existing_slugs)} existing technologies.")
 
-    print(f"\n[LIST] 발견된 기술들: {', '.join(discovered_technologies[:10])}...")
+    new_technologies = []
+    for tech in discovered_technologies:
+        slug = create_slug(tech)
+        if slug not in existing_slugs:
+            new_technologies.append(tech)
+    
+    skipped_count = len(discovered_technologies) - len(new_technologies)
+    print(f"[INFO] Skipped {skipped_count} technologies that already exist.")
+    
+    discovered_technologies = new_technologies
+
+    if not discovered_technologies:
+        print("[INFO] No new technologies to process.")
+        return
+
+    # 개수 제한 적용
+    if max_limit is not None:
+        discovered_technologies = discovered_technologies[:max_limit]
+
+    print(f"\n[LIST] 새로 처리할 기술들: {', '.join(discovered_technologies[:10])}...")
     print(f"[COUNT] 총 처리할 기술 수: {len(discovered_technologies)}")
 
-    # 2단계: 각 기술에 대해 상세 정보 수집 및 처리
+    # 2단계: 병렬 처리 (Async)
     processed_count = 0
     failed_count = 0
+    
+    # 동시에 실행할 작업 수
+    MAX_CONCURRENT = 2
+    print(f"[INFO] 병렬 처리 시작 (Max Concurrent: {MAX_CONCURRENT})")
 
-    for i, tech in enumerate(discovered_technologies, 1):
-        try:
-            print(f"\n[{i}/{len(discovered_technologies)}] 처리 중: {tech}")
+    # 세마포어로 동시 실행 제한
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
-            if process_technology(tech):
-                processed_count += 1
-                print(f"    [SUCCESS] {tech} 처리 완료")
-            else:
-                failed_count += 1
-                print(f"    [FAILED] {tech} 처리 실패")
+    async def sem_task(tech):
+        async with semaphore:
+            try:
+                return await process_technology(tech)
+            except Exception as e:
+                print(f"    [ERROR] {tech} 처리 중 예외 발생: {e}")
+                return False
 
-            # Rate limiting (제한된 모드에서는 더 빠르게)
-            sleep_time = 1 if limited_mode else 2
-            time.sleep(sleep_time)
+    tasks = [sem_task(tech) for tech in discovered_technologies]
+    results = await asyncio.gather(*tasks)
 
-        except Exception as e:
-            failed_count += 1
-            print(f"    [ERROR] {tech} 처리 중 오류: {e}")
-
-        # 제한된 모드에서 중간 진행상황 출력
-        if limited_mode and i % 2 == 0:
-            print(f"  [PROGRESS] 진행상황: {i}/{len(discovered_technologies)} ({(i/len(discovered_technologies)*100):.1f}%)")
+    processed_count = sum(1 for r in results if r)
+    failed_count = len(results) - processed_count
 
     print(f'\n[COMPLETE] 동적 수집 완료!')
     print(f'[SUCCESS] 성공: {processed_count}개')
@@ -566,4 +678,10 @@ def main():
         print(f"[ERROR] 통계 생성 실패: {e}")
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser(description="Dynamic Tech Discovery Runner")
+    parser.add_argument('--max-techs', type=int, default=None, help='수집할 최대 기술 수')
+    parser.add_argument('--limited-mode', action='store_true', help='LIMITED_MODE 강제 활성화')
+    parser.add_argument('--check-only', action='store_true', help='수집 가능한 기술 수만 확인')
+    args = parser.parse_args()
+    
+    asyncio.run(main(max_techs=args.max_techs, force_limited_mode=args.limited_mode, check_only=args.check_only))

@@ -1,395 +1,42 @@
 [
   {
-    "name": "React",
-    "slug": "react",
-    "category": "frontend",
-    "description": "사용자 인터페이스 구축을 위한 JavaScript 라이브러리",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    "popularity": 98,
+    "name": "Svelte",
+    "slug": "svelte",
+    "category": "framework",
+    "description": "컴파일러 기반 UI 프레임워크, 간결한 컴포넌트 개발 지원 (HTML, CSS, JS)",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+    "popularity": 100,
     "learning_resources": [
       {
-        "url": "https://reactjs.org/docs",
-        "type": "documentation",
-        "title": "React 공식 문서"
-      },
-      {
-        "url": "https://reactjs.org/tutorial/tutorial.html",
+        "url": "https://svelte.dev/tutorial",
         "type": "tutorial",
-        "title": "React 튜토리얼"
-      }
-    ],
-    "ai_explanation": "React는 Facebook에서 개발한 선언적이고 효율적인 JavaScript 라이브러리입니다. 컴포넌트 기반 아키텍처를 통해 재사용 가능한 UI 요소를 만들 수 있으며, Virtual DOM을 사용하여 성능을 최적화합니다. JSX 문법을 사용하여 JavaScript 안에서 HTML과 유사한 코드를 작성할 수 있어 개발자 경험이 뛰어납니다.",
-    "homepage": "https://reactjs.org",
-    "repo": "https://github.com/facebook/react",
-    "project_suitability": [
-      "대화형 사용자 인터페이스가 중요한 웹 애플리케이션",
-      "SPA(Single Page Application) 개발",
-      "실시간 데이터 업데이트가 필요한 대시보드",
-      "컴포넌트 기반 재사용 가능한 UI 구축"
-    ],
-    "learning_difficulty": {
-      "label": "중급",
-      "stars": [
-        true,
-        true,
-        true,
-        false,
-        false
-      ],
-      "description": "JavaScript와 컴포넌트 개념 이해가 선행되어야 하며, 상태 관리와 생명주기를 이해하는 것이 중요합니다."
-    },
-    "updated_at": "2025-09-17T00:40:33.238"
-  },
-  {
-    "name": "Python",
-    "slug": "python",
-    "category": "language",
-    "description": "범용 프로그래밍 언어",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    "popularity": 94,
-    "learning_resources": [],
-    "ai_explanation": "Python은 Guido van Rossum이 개발한 고급 프로그래밍 언어입니다. 간결하고 읽기 쉬운 문법으로 생산성이 높으며, 웹 개발, 데이터 분석, 인공지능, 자동화 등 다양한 분야에서 활용됩니다. 풍부한 라이브러리 생태계와 활발한 커뮤니티를 가지고 있어 학습과 개발에 유리합니다.",
-    "homepage": "https://www.python.org",
-    "repo": "https://github.com/python/cpython",
-    "project_suitability": [
-      "데이터 분석 및 데이터 사이언스 프로젝트",
-      "딥러닝 및 AI 모델 개발",
-      "웹 개발 및 API 서버 구축",
-      "자동화 스크립트 및 데이터 파이프라인"
-    ],
-    "learning_difficulty": {
-      "label": "초중급",
-      "stars": [
-        true,
-        true,
-        false,
-        false,
-        false
-      ],
-      "description": "읽기 쉬운 문법으로 프로그래밍 입문자에게 좋습니다."
-    },
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "Node.js",
-    "slug": "nodejs",
-    "category": "backend",
-    "description": "JavaScript 런타임 환경",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    "popularity": 93,
-    "learning_resources": [],
-    "ai_explanation": "Node.js는 Chrome V8 JavaScript 엔진을 기반으로 한 서버 사이드 JavaScript 런타임 환경입니다. 이벤트 기반의 비동기 I/O 모델을 사용하여 높은 성능과 확장성을 제공합니다. NPM 생태계를 통해 수많은 오픈소스 패키지를 활용할 수 있으며, 프론트엔드와 백엔드에서 동일한 언어를 사용할 수 있는 장점이 있습니다.",
-    "homepage": "https://nodejs.org",
-    "repo": "https://github.com/nodejs/node",
-    "project_suitability": [
-      "확장 가능한 REST API 서버 구축",
-      "실시간 채팅 및 알림 시스템",
-      "마이크로서비스 아키텍처",
-      "I/O 집약적인 네트워크 애플리케이션"
-    ],
-    "learning_difficulty": {
-      "label": "중급",
-      "stars": [
-        true,
-        true,
-        true,
-        false,
-        false
-      ],
-      "description": "JavaScript 기초와 비동기 프로그래밍, 서버 개발 개념 이해가 필요합니다."
-    },
-    "updated_at": "2025-09-17T00:40:57.06"
-  },
-  {
-    "name": "Next.js",
-    "slug": "nextjs",
-    "category": "frontend",
-    "description": "React 기반 프로덕션 프레임워크",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    "popularity": 91,
-    "learning_resources": [],
-    "ai_explanation": "Next.js는 Vercel에서 개발한 React 기반 풀스택 웹 프레임워크입니다. 서버 사이드 렌더링(SSR), 정적 사이트 생성(SSG), API 라우트 등을 지원하며, 성능 최적화와 SEO에 강점이 있습니다. 파일 기반 라우팅 시스템과 자동 코드 분할 기능으로 개발 생산성을 크게 향상시킵니다.",
-    "homepage": "https://nextjs.org",
-    "repo": "https://github.com/vercel/next.js",
-    "project_suitability": [
-      "SEO가 중요한 비즈니스 웹사이트",
-      "전자상거래 및 컨텐츠 사이트",
-      "마케팅 랜딩 페이지",
-      "블로그 및 미디어 플랫폼"
-    ],
-    "learning_difficulty": {
-      "label": "고급",
-      "stars": [
-        true,
-        true,
-        true,
-        true,
-        false
-      ],
-      "description": "React 경험이 필수이며, SSR/SSG 개념과 라우팅 시스템 이해가 중요합니다."
-    },
-    "updated_at": "2025-09-17T00:41:43.423"
-  },
-  {
-    "name": "TypeScript",
-    "slug": "typescript",
-    "category": "language",
-    "description": "JavaScript에 타입을 추가한 언어",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    "popularity": 90,
-    "learning_resources": [],
-    "ai_explanation": "TypeScript는 Microsoft에서 개발한 JavaScript의 상위 집합 언어입니다. 정적 타입 검사를 통해 런타임 오류를 컴파일 타임에 잡아낼 수 있으며, 대규모 애플리케이션 개발 시 코드의 안정성과 유지보수성을 크게 향상시킵니다. 최신 ES 기능을 지원하며 다양한 IDE에서 뛰어난 개발자 도구를 제공합니다.",
-    "homepage": "https://www.typescriptlang.org",
-    "repo": "https://github.com/microsoft/TypeScript",
-    "project_suitability": [
-      "대규모 팀에서 개발하는 복잡한 애플리케이션",
-      "타입 안정성이 중요한 엔터프라이즈 프로젝트",
-      "장기적 유지보수가 필요한 시스템",
-      "API와 데이터 모델이 복잡한 프로젝트"
-    ],
-    "learning_difficulty": {
-      "label": "중급",
-      "stars": [
-        true,
-        true,
-        true,
-        false,
-        false
-      ],
-      "description": "JavaScript 경험이 필요하며, 타입 시스템과 제네릭 개념 이해가 중요합니다."
-    },
-    "updated_at": "2025-09-17T00:40:42.258"
-  },
-  {
-    "name": "Java",
-    "slug": "java",
-    "category": "language",
-    "description": "객체 지향 프로그래밍 언어",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    "popularity": 89,
-    "learning_resources": [],
-    "ai_explanation": "Java는 Sun Microsystems(현 Oracle)에서 개발한 객체 지향 프로그래밍 언어입니다. \"Write Once, Run Anywhere\" 철학으로 JVM을 통해 플랫폼 독립성을 제공합니다. 강력한 타입 시스템과 메모리 관리, 멀티스레딩 지원으로 대규모 엔터프라이즈 애플리케이션 개발에 널리 사용됩니다.",
-    "homepage": "https://www.oracle.com/java",
-    "repo": "https://github.com/openjdk/jdk",
-    "project_suitability": [],
-    "learning_difficulty": null,
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "Docker",
-    "slug": "docker",
-    "category": "devops",
-    "description": "컨테이너화 플랫폼",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    "popularity": 88,
-    "learning_resources": [],
-    "ai_explanation": "Docker는 애플리케이션을 컨테이너화하여 어디서나 동일하게 실행할 수 있게 해주는 플랫폼입니다. 가상화보다 가볍고 빠르며, 개발, 테스트, 배포 환경을 일관성 있게 관리할 수 있습니다. 마이크로서비스 아키텍처와 CI/CD 파이프라인에서 핵심적인 역할을 하며, 클라우드 네이티브 개발의 필수 도구입니다.",
-    "homepage": "https://www.docker.com",
-    "repo": "https://github.com/docker/docker-ce",
-    "project_suitability": [
-      "컨테이너 기반 배포 환경",
-      "CI/CD 파이프라인 구축",
-      "마이크로서비스 아키텍처",
-      "개발 환경 표준화 프로젝트"
-    ],
-    "learning_difficulty": {
-      "label": "중급",
-      "stars": [
-        true,
-        true,
-        true,
-        false,
-        false
-      ],
-      "description": "컨테이너 개념과 리눅스 기초 지식이 도움됩니다."
-    },
-    "updated_at": "2025-09-17T00:42:00.191"
-  },
-  {
-    "name": "PostgreSQL",
-    "slug": "postgresql",
-    "category": "database",
-    "description": "오픈 소스 관계형 데이터베이스",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    "popularity": 86,
-    "learning_resources": [],
-    "ai_explanation": "PostgreSQL은 확장 가능성과 표준 준수를 강조하는 오픈소스 관계형 데이터베이스입니다. ACID 속성을 완전히 지원하며, 복잡한 쿼리, 외래 키, 트리거, 뷰 등 고급 기능을 제공합니다. JSON 데이터 타입 지원과 확장 기능을 통해 NoSQL의 장점도 활용할 수 있습니다.",
-    "homepage": "https://www.postgresql.org",
-    "repo": "https://github.com/postgres/postgres",
-    "project_suitability": [],
-    "learning_difficulty": null,
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "Vue.js",
-    "slug": "vue",
-    "category": "frontend",
-    "description": "프로그레시브 JavaScript 프레임워크",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-    "popularity": 85,
-    "learning_resources": [],
-    "ai_explanation": "Vue.js는 Evan You가 개발한 프로그레시브 JavaScript 프레임워크입니다. 학습 곡선이 완만하고 기존 프로젝트에 점진적으로 도입할 수 있어 접근성이 뛰어납니다. 템플릿 기반 문법과 양방향 데이터 바인딩을 제공하며, 컴포지션 API를 통해 로직을 재사용 가능한 형태로 구성할 수 있습니다.",
-    "homepage": "https://vuejs.org",
-    "repo": "https://github.com/vuejs/vue",
-    "project_suitability": [
-      "기존 프로젝트에 점진적 도입",
-      "중소규모 웹 애플리케이션",
-      "프롯타이핑 및 빠른 개발",
-      "학습용 프레임워크 프로젝트"
-    ],
-    "learning_difficulty": {
-      "label": "초중급",
-      "stars": [
-        true,
-        true,
-        false,
-        false,
-        false
-      ],
-      "description": "직관적인 문법으로 프레임워크 입문자에게 적합합니다."
-    },
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "MySQL",
-    "slug": "mysql",
-    "category": "database",
-    "description": "인기 있는 오픈 소스 관계형 데이터베이스",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "popularity": 84,
-    "learning_resources": [],
-    "ai_explanation": "MySQL은 Oracle에서 개발하고 유지하는 오픈소스 관계형 데이터베이스 관리 시스템입니다. 빠른 성능과 안정성으로 웹 애플리케이션에서 널리 사용되며, LAMP 스택의 핵심 구성 요소입니다. 사용하기 쉽고 다양한 스토리지 엔진을 지원하여 다양한 요구사항에 맞춰 최적화할 수 있습니다.",
-    "homepage": "https://www.mysql.com",
-    "repo": "https://github.com/mysql/mysql-server",
-    "project_suitability": [],
-    "learning_difficulty": null,
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "Spring",
-    "slug": "spring",
-    "category": "backend",
-    "description": "Java 기반 애플리케이션 프레임워크",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-    "popularity": 82,
-    "learning_resources": [],
-    "ai_explanation": "Spring은 Java 기반의 오픈소스 애플리케이션 프레임워크입니다. 의존성 주입(DI)과 관점 지향 프로그래밍(AOP)을 핵심으로 하며, Spring Boot를 통해 복잡한 설정 없이도 빠르게 애플리케이션을 개발할 수 있습니다. 엔터프라이즈급 애플리케이션 개발에 필요한 다양한 기능과 모듈을 제공합니다.",
-    "homepage": "https://spring.io",
-    "repo": "https://github.com/spring-projects/spring-framework",
-    "project_suitability": [],
-    "learning_difficulty": null,
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "MongoDB",
-    "slug": "mongodb",
-    "category": "database",
-    "description": "NoSQL 문서 기반 데이터베이스",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    "popularity": 81,
-    "learning_resources": [],
-    "ai_explanation": "MongoDB는 문서 지향 NoSQL 데이터베이스입니다. JSON과 유사한 BSON 형식으로 데이터를 저장하여 스키마의 유연성을 제공하며, 수평적 확장이 용이합니다. 복잡한 JOIN 없이도 연관된 데이터를 함께 저장할 수 있어 개발 속도가 빠르고, 대용량 데이터 처리에 적합합니다.",
-    "homepage": "https://www.mongodb.com",
-    "repo": "https://github.com/mongodb/mongo",
-    "project_suitability": [],
-    "learning_difficulty": null,
-    "updated_at": "2025-09-16T23:30:02.695"
-  },
-  {
-    "name": "C++",
-    "slug": "cplusplus",
-    "category": "language",
-    "description": "하드웨어에 가까운 제어와 최고 수준 성능을 제공하는 범용 시스템 프로그래밍 언어. 현대 C++(C++17/20/23)의 제로코스트 추상화와 풍부한 표준 라이브러리로 게임, 금융, 임베디드, HPC까지 폭넓게 활용된다.",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-    "popularity": 40,
-    "learning_resources": [
+        "title": "공식 Svelte 튜토리얼 (핵심 개념 학습)"
+      },
       {
-        "url": "https://en.cppreference.com/",
+        "url": "https://svelte.dev/docs",
         "type": "documentation",
-        "title": "cppreference: C++ 표준 라이브러리 참조"
+        "title": "공식 Svelte 문서 (API 및 세부 사항)"
       },
       {
-        "url": "https://isocpp.org/",
-        "type": "documentation",
-        "title": "ISO C++ 공식 사이트 및 뉴스"
-      },
-      {
-        "url": "https://learn.microsoft.com/ko-kr/cpp/",
-        "type": "tutorial",
-        "title": "Microsoft Learn: C++ 기초와 실습"
-      },
-      {
-        "url": "https://isocpp.github.io/CppCoreGuidelines/",
-        "type": "documentation",
-        "title": "C++ 코어 가이드라인"
-      },
-      {
-        "url": "https://www.youtube.com/c/CppNowConference",
+        "url": "https://www.youtube.com/watch?v=s8zW-S4qGys",
         "type": "video",
-        "title": "C++Now 강연 모음"
+        "title": "Svelte 입문 강좌 (개념 및 예제 학습)"
+      },
+      {
+        "url": "https://svelte.dev/blog",
+        "type": "blog",
+        "title": "공식 블로그 (최신 정보 및 사용 팁)"
       }
     ],
-    "ai_explanation": "C++는 성능과 예측 가능한 지연을 중시하는 시스템 개발에 최적화된 언어다. RAII와 제로코스트 추상화, 템플릿·컨셉트로 고수준 표현력을 확보하면서도 메모리·동시성 제어를 세밀히 다룬다. C++20/23은 모듈, 코루틴, 범위, expected·print 등으로 생산성과 안전성을 개선했다. 단, 빌드·의존성 관리와 미정의 동작(UB) 대응에는 숙련이 필요하다.",
-    "homepage": "https://social.msdn.microsoft.com/Forums/SECURITY/en-US/72da6400-7a22-4bcc-b8d3-6423086289f0/visual-c-2015-redistributable-setup-failed-0x80070666-x64-amp-x86?forum=vssetup",
-    "repo": null,
+    "ai_explanation": "Svelte는 컴파일러를 사용하여 브라우저에서 최소한의 작업을 수행하는 UI 프레임워크입니다. HTML, CSS, JavaScript를 사용해 간결하고 효율적인 컴포넌트를 작성할 수 있습니다. Svelte는 런타임에 가상 DOM을 사용하지 않고, 컴파일 시점에 필요한 코드를 생성하여 번들 사이즈를 줄이고 성능을 향상시킵니다. 개발자들은 Svelte를 사용하면 코드량을 줄이고, 생산성을 높일 수 있으며, 웹 개발 경험을 향상시킬 수 있다고 평가합니다. Stack Overflow 및 State of JavaScript 설문조사에서 높은 선호도를 보이며, UI 개발 분야에서 주목받고 있습니다.",
+    "homepage": "https://svelte.dev/",
+    "repo": "https://github.com/sveltejs/svelte",
     "project_suitability": [
-      "AAA 게임 엔진과 실시간 렌더링 시스템",
-      "초저지연 금융 트레이딩·리스크 계산 엔진",
-      "임베디드·IoT 펌웨어, 드라이버, RTOS 애플리케이션",
-      "고성능 시뮬레이션·과학 계산·HPC 파이프라인",
-      "크로스플랫폼 데스크톱·네이티브 애플리케이션"
-    ],
-    "learning_difficulty": {
-      "label": "고급",
-      "stars": [
-        true,
-        true,
-        true,
-        true,
-        false
-      ],
-      "description": "문법이 방대하고 메모리·동시성 제어가 어렵다. 현대 문법과 도구 숙련이 필요하다."
-    },
-    "updated_at": "2025-09-18T17:43:52.561"
-  },
-  {
-    "name": "Elm",
-    "slug": "elm",
-    "category": "language",
-    "description": "브라우저용 정적 타입 함수형 언어로, Elm 아키텍처와 불변성으로 예측 가능한 상태 관리를 제공해 안전한 UI를 구축한다. 자바스크립트와는 포트·커스텀 엘리먼트로 상호작용한다.",
-    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Elm_logo.svg",
-    "popularity": 40,
-    "learning_resources": [
-      {
-        "url": "https://guide.elm-lang.org/",
-        "type": "tutorial",
-        "title": "The Elm Guide 공식 튜토리얼"
-      },
-      {
-        "url": "https://package.elm-lang.org/",
-        "type": "documentation",
-        "title": "Elm 패키지 문서 포털"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=IcgmSRJHu_8",
-        "type": "video",
-        "title": "Richard Feldman: 불가능한 상태 없애기"
-      },
-      {
-        "url": "https://www.manning.com/books/elm-in-action",
-        "type": "book",
-        "title": "Elm in Action (영문서)"
-      }
-    ],
-    "ai_explanation": "Elm은 자바스크립트로 컴파일되는 순수 함수형 언어다. 강력한 타입 시스템, 불변 데이터, 단방향 흐름(Elm Architecture)로 런타임 예외와 상태 복잡도를 줄인다. 컴파일러 오류 메시지가 친절해 리팩터링이 쉽고 빌드가 단순하다. 반면 생태계와 릴리스 속도는 느리며, 서드파티 JS 연동은 포트/커스텀 엘리먼트가 필요해 초기 비용이 있다.",
-    "homepage": "https://package.elm-lang.org/",
-    "repo": "https://github.com/elm",
-    "project_suitability": [
-      "복잡한 폼과 검증이 많은 내부 업무용 SPA",
-      "장기 유지보수가 중요한 데이터 대시보드",
-      "안정성이 최우선인 금융·의료 웹 프런트엔드",
-      "소규모 팀의 점진적 도입이 필요한 기존 JS 웹앱",
-      "교육용 함수형 프런트엔드 학습 프로젝트"
+      "상호작용이 많은 싱글 페이지 애플리케이션 (SPA) 개발",
+      "성능 최적화가 중요한 웹사이트 및 애플리케이션 구축",
+      "개발 생산성을 높이고 싶은 중소 규모 프로젝트",
+      "빠른 초기 로딩 속도가 요구되는 웹 서비스",
+      "서버 사이드 렌더링(SSR)을 위한 SvelteKit 활용 프로젝트"
     ],
     "learning_difficulty": {
       "label": "중급",
@@ -400,110 +47,43 @@
         false,
         false
       ],
-      "description": "함수형 패러다임과 포트 기반 JS 연동 개념이 관건"
+      "description": "HTML, CSS, JavaScript 기본 지식이 필요하며, Svelte의 컴파일 방식과 반응형 시스템에 대한 이해가 필요합니다. 튜토리얼을 통해 빠르게 학습할 수 있습니다."
     },
-    "updated_at": "2025-09-18T17:49:05.254"
+    "updated_at": "2025-11-21T06:22:12.66"
   },
   {
-    "name": "Delphi",
-    "slug": "delphi",
-    "category": "tool",
-    "description": "Windows 중심의 상용 RAD 통합 개발환경으로, Object Pascal 컴파일러와 시각적 컴포넌트(VCL·FireMonkey)를 제공해 데스크톱·모바일 네이티브 앱을 빠르게 구축하고 장기 유지보수에 유리한 생산성을 제공한다.",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/delphi/delphi-original.svg",
-    "popularity": 40,
+    "name": "Flask",
+    "slug": "flask",
+    "category": "framework",
+    "description": "Flask는 Python 기반의 가볍고 유연한 웹 프레임워크입니다. 소규모 프로젝트부터 대규모 애플리케이션까지 확장 가능합니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+    "popularity": 100,
     "learning_resources": [
       {
-        "url": "https://docwiki.embarcadero.com/RADStudio/Athens/en/Main_Page",
+        "url": "https://flask.palletsprojects.com/",
         "type": "documentation",
-        "title": "Delphi/RAD Studio 공식 문서(DocWiki)"
+        "title": "Flask 공식 문서 - 프레임워크 상세 설명"
       },
       {
-        "url": "https://learndelphi.org",
+        "url": "https://flask.palletsprojects.com/en/3.0.x/tutorial/",
         "type": "tutorial",
-        "title": "LearnDelphi.org 입문 튜토리얼"
+        "title": "Flask 튜토리얼 - 단계별 웹 앱 제작 가이드"
       },
       {
-        "url": "https://www.youtube.com/@EmbarcaderoTechNet",
+        "url": "https://www.youtube.com/watch?v=Z1RJmh_OqeA",
         "type": "video",
-        "title": "Embarcadero 공식 유튜브 채널"
-      },
-      {
-        "url": "https://lp.embarcadero.com/object-pascal-handbook",
-        "type": "book",
-        "title": "Object Pascal 핸드북(마르코 칸투)"
+        "title": "Flask 튜토리얼 - 간단한 웹 애플리케이션 만들기"
       }
     ],
-    "ai_explanation": "Delphi는 Embarcadero의 상용 통합 개발환경으로 Object Pascal 기반 컴파일러, 폼 디자이너, 디버거와 풍부한 VCL/FireMonkey 컴포넌트를 제공한다. Windows LOB와 레거시 현대화에 강하며 단일 코드베이스로 iOS/Android/macOS도 지원한다. Delphi 12 Athens는 High DPI, LSP, 64비트/ARM 지원을 개선했다. 단, 라이선스 비용과 작은 생태계, 모바일 최신 API 추적 속도는 유의할 점이다.",
-    "homepage": "https://delphi.embarcadero.com/project/delphi-7/",
-    "repo": "https://github.com/topics/delphi",
+    "ai_explanation": "Flask는 Werkzeug와 Jinja2를 기반으로 하는 경량 웹 프레임워크로, 개발자가 웹 애플리케이션을 쉽고 빠르게 구축할 수 있도록 설계되었습니다. 다른 프레임워크와 달리, Flask는 핵심 기능만 제공하며, 데이터베이스 연동, 폼 처리, 인증 등과 같은 추가 기능은 확장(extension)을 통해 구현합니다. 이는 Flask가 유연성을 갖도록 하며, 개발자가 필요한 기능만 선택하여 사용할 수 있도록 합니다. Flask는 RESTful API 개발, 간단한 웹사이트 구축, 그리고 다양한 백엔드 애플리케이션 개발에 적합합니다. 또한, 개발 커뮤니티가 활발하여 다양한 확장 기능과 풍부한 자료를 이용할 수 있습니다. Flask의 'Hello, World!' 예제에서 볼 수 있듯이, 매우 직관적이고 배우기 쉬우며, 다양한 프로젝트 레이아웃과 종속성을 강요하지 않아 개발자가 자유롭게 선택할 수 있습니다.",
+    "homepage": "https://palletsprojects.com/p/flask/",
+    "repo": "https://github.com/pallets/flask",
     "project_suitability": [
-      "대규모 기업용 Windows 데스크톱 LOB 애플리케이션",
-      "기존 Delphi/VCL 시스템의 기능 확장과 현대화",
-      "하드웨어·시리얼 통신 기반 산업용/HMI/SCADA 솔루션",
-      "오프라인 중심 POS·물류·현장 업무용 네이티브 앱",
-      "단일 코드베이스의 크로스플랫폼 데스크톱/모바일"
-    ],
-    "learning_difficulty": {
-      "label": "중급",
-      "stars": [
-        true,
-        true,
-        true,
-        false,
-        false
-      ],
-      "description": "문법은 쉽지만 컴포넌트 모델, 메모리·스레딩, VCL·FireMonkey 이해가 필요."
-    },
-    "updated_at": "2025-09-26T03:11:17.564"
-  },
-  {
-    "name": "Ruby",
-    "slug": "ruby",
-    "category": "language",
-    "description": "간결한 문법과 높은 생산성을 지향하는 동적 객체지향 언어. 웹 백엔드와 자동화 스크립트에 강하며, 젬 생태계와 Bundler로 의존성 관리를 단순화하고 Rails와 결합해 빠른 제품 개발에 적합하다.",
-    "logo_url": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
-    "popularity": 40.0,
-    "learning_resources": [
-      {
-        "url": "https://www.ruby-lang.org/ko/documentation/",
-        "type": "documentation",
-        "title": "루비 공식 문서 모음"
-      },
-      {
-        "url": "https://docs.ruby-lang.org/en/",
-        "type": "documentation",
-        "title": "루비 API 레퍼런스(영문)"
-      },
-      {
-        "url": "http://rubykoans.com/",
-        "type": "tutorial",
-        "title": "루비 코안으로 테스트 주도 학습"
-      },
-      {
-        "url": "https://exercism.org/tracks/ruby",
-        "type": "tutorial",
-        "title": "Exercism 루비 트랙 실습"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=t_ispmWmdjY",
-        "type": "video",
-        "title": "freeCodeCamp 루비 풀코스(영문)"
-      },
-      {
-        "url": "https://www.manning.com/books/the-well-grounded-rubyist-third-edition",
-        "type": "book",
-        "title": "웰그라운디드 루비스트 3판(영문)"
-      }
-    ],
-    "ai_explanation": "Ruby는 읽기 쉬운 문법과 일관된 객체지향 철학으로 빠른 개발 사이클을 제공한다. 방대한 젬 생태계와 Bundler로 재사용이 용이하며, Rails와의 시너지가 크다. Ruby 3에서 YJIT로 성능이 개선되고 Ractor로 병렬성이 보강됐지만, GVL 특성상 CPU 집약적 작업·초저지연 초고동시성에는 한계가 있다. 웹 백엔드, 자동화 스크립트, CLI 제작에 실용적이다.",
-    "homepage": "https://www.ruby-lang.org/en/downloads/",
-    "repo": "https://github.com/ruby/ruby",
-    "project_suitability": [
-      "MVP 웹서비스와 스타트업 제품 초기 개발",
-      "CRUD 중심의 백오피스·사내 업무용 도구",
-      "REST/GraphQL API 서버(중간 트래픽 규모)",
-      "배치 처리·스크립팅·DevOps 자동화 도구",
-      "경량 CLI 유틸리티와 데이터 파이프라인"
+      "소규모 웹사이트 및 API 개발",
+      "빠른 프로토타입 제작",
+      "RESTful API 기반 백엔드 시스템 구축",
+      "마이크로서비스 아키텍처 구현",
+      "단일 페이지 애플리케이션(SPA) 백엔드"
     ],
     "learning_difficulty": {
       "label": "초급",
@@ -514,8 +94,1531 @@
         false,
         false
       ],
-      "description": "문법은 쉽지만 성능·동시성 최적화에는 추가 학습 필요"
+      "description": "Flask는 배우기 쉽고, 간결한 문법과 명확한 구조를 가지고 있어 웹 개발 입문자에게 적합합니다. 공식 문서와 커뮤니티 자료가 풍부합니다."
     },
-    "updated_at": "2025-09-29T04:42:49.129635+00:00"
+    "updated_at": "2025-11-21T06:22:25.774"
+  },
+  {
+    "name": "C++",
+    "slug": "cplusplus",
+    "category": "language",
+    "description": "C++는 강력한 성능과 시스템 프로그래밍 능력을 제공하는 범용 프로그래밍 언어입니다. 객체 지향, 절차 지향, 일반 프로그래밍을 지원하며, 하드웨어 제어에도 사용됩니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://isocpp.org/get-started",
+        "type": "documentation",
+        "title": "C++ 공식 홈페이지 - Get Started 가이드"
+      },
+      {
+        "url": "https://isocpp.org/tour",
+        "type": "documentation",
+        "title": "C++ 공식 홈페이지 - Tour of C++"
+      },
+      {
+        "url": "https://isocpp.org/guidelines",
+        "type": "documentation",
+        "title": "C++ Core Guidelines"
+      },
+      {
+        "url": "http://en.cppreference.com/w/cpp",
+        "type": "documentation",
+        "title": "cppreference.com - C++ 레퍼런스"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLBlnK6fEyqRh6YTbWqk1I9p1W9Yg46xWk",
+        "type": "video",
+        "title": "Udemy - C++ Programming Tutorial for Beginners"
+      }
+    ],
+    "ai_explanation": "C++는 1979년 Bjarne Stroustrup에 의해 개발되었으며, C 언어의 확장으로 시작되었습니다. 시스템 프로그래밍, 게임 개발, 고성능 애플리케이션 등 다양한 분야에서 널리 사용됩니다. C++는 메모리 관리, 템플릿, 다중 상속 등의 강력한 기능을 제공하여 유연하고 효율적인 코드 작성을 가능하게 합니다. 최신 C++ 표준(C++20, C++23)은 더 많은 기능과 개선 사항을 도입하여 생산성을 향상시키고 있으며, 표준 라이브러리를 통해 다양한 기능을 활용할 수 있습니다. isocpp.org는 C++ 표준에 대한 최신 정보와 자료를 제공하는 공식 웹사이트입니다. 특히, 최신 뉴스, 컨퍼런스 정보, 핵심 가이드라인, FAQ 등을 통해 C++ 개발자들이 최신 기술 동향을 파악하고 학습할 수 있도록 돕습니다.",
+    "homepage": "https://isocpp.org/",
+    "repo": null,
+    "project_suitability": [
+      "고성능이 요구되는 시스템 및 임베디드 시스템 개발",
+      "게임 엔진 및 게임 개발",
+      "금융 시스템 및 거래 플랫폼 개발",
+      "대규모 소프트웨어 시스템 구축"
+    ],
+    "learning_difficulty": {
+      "label": "고급",
+      "stars": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "description": "C++는 메모리 관리, 포인터, 템플릿 등 학습해야 할 개념이 많아 초기 학습 난이도가 높습니다. 하지만, 깊이 있는 이해를 통해 강력한 성능을 발휘할 수 있습니다."
+    },
+    "updated_at": "2025-11-21T11:41:45.33"
+  },
+  {
+    "name": "React",
+    "slug": "react",
+    "category": "library",
+    "description": "사용자 인터페이스 구축을 위한 JavaScript 라이브러리. 컴포넌트 기반 개발 방식.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://react.dev/learn",
+        "type": "documentation",
+        "title": "React 공식 튜토리얼 (핵심 개념 학습)"
+      },
+      {
+        "url": "https://react.dev/reference/react",
+        "type": "documentation",
+        "title": "React API 레퍼런스 (API 상세 정보 확인)"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=8pDqJVdNa44",
+        "type": "video",
+        "title": "React: The Documentary (React의 역사와 철학)"
+      },
+      {
+        "url": "https://react.dev/blog",
+        "type": "blog",
+        "title": "React 공식 블로그 (최신 정보 확인)"
+      }
+    ],
+    "ai_explanation": "React는 Facebook에서 개발한 사용자 인터페이스(UI) 구축을 위한 JavaScript 라이브러리입니다. 컴포넌트 기반 아키텍처를 사용하여 UI를 재사용 가능한 독립적인 조각으로 분할하여 개발 효율성을 높입니다. JSX 문법을 통해 HTML과 유사한 방식으로 UI를 선언하며, 가상 DOM을 사용하여 변경 사항을 효율적으로 감지하고 실제 DOM을 업데이트합니다. React는 단방향 데이터 바인딩을 지원하며, 상태 관리를 위한 다양한 라이브러리(예: Redux, Zustand)와 함께 사용될 수 있습니다. 대규모 웹 애플리케이션 개발에 적합하며, React Native를 통해 네이티브 모바일 앱 개발에도 활용됩니다. React는 풍부한 생태계를 가지고 있으며, Next.js, Gatsby와 같은 프레임워크를 통해 더욱 강력한 개발 경험을 제공합니다. 최신 버전에서는 서버 컴포넌트 및 서버 사이드 렌더링(SSR) 기능이 강화되어 성능 개선과 SEO 최적화에 기여합니다.",
+    "homepage": "https://react.dev/",
+    "repo": "https://github.com/facebook/react",
+    "project_suitability": [
+      "복잡한 UI를 가진 싱글 페이지 애플리케이션(SPA)",
+      "대규모 웹 애플리케이션 개발",
+      "동적인 사용자 인터페이스가 필요한 웹사이트",
+      "모바일 앱 개발 (React Native)",
+      "기존 웹 페이지에 점진적으로 추가하여 사용"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "JavaScript, HTML, CSS에 대한 기본적인 이해가 필요합니다. 컴포넌트, JSX, 상태 관리 개념을 익히는 데 시간이 소요될 수 있지만, 다양한 학습 자료와 활발한 커뮤니티 덕분에 접근성이 좋습니다."
+    },
+    "updated_at": "2025-11-28T04:43:54.352"
+  },
+  {
+    "name": "Azure Functions",
+    "slug": "azure-functions",
+    "category": "backend",
+    "description": "Azure Functions는 서버리스 컴퓨팅 서비스로, 코드를 이벤트에 반응하여 실행합니다.",
+    "logoUrl": "",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://learn.microsoft.com/ko-kr/azure/azure-functions/",
+        "type": "documentation",
+        "title": "Azure Functions 공식 문서"
+      },
+      {
+        "url": "https://learn.microsoft.com/ko-kr/azure/azure-functions/functions-get-started",
+        "type": "tutorial",
+        "title": "Azure Functions 시작하기 튜토리얼"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLaz8eB8191Lz5-r41J2sL8-5E28-N07gT",
+        "type": "video",
+        "title": "Azure Functions 강좌 (Microsoft Learn)"
+      }
+    ],
+    "ai_explanation": "Azure Functions는 Microsoft Azure 클라우드 플랫폼에서 제공하는 서버리스 컴퓨팅 서비스입니다. 개발자는 특정 서버를 관리하지 않고도 코드를 실행할 수 있으며, 트리거(예: HTTP 요청, 타이머, 큐 메시지)에 의해 실행됩니다. 다양한 언어(C#, JavaScript, Python, Java 등)를 지원하며, Azure의 다른 서비스(Cosmos DB, Storage, Event Hubs 등)와 쉽게 통합될 수 있습니다. 자동 스케일링을 통해 트래픽 변화에 유연하게 대응하며, 사용한 컴퓨팅 리소스에 대해서만 비용을 지불하므로 비용 효율적입니다. Azure Functions는 이벤트 기반 아키텍처, 마이크로서비스, API 백엔드, 데이터 처리 등 다양한 시나리오에 적합합니다. 개발 생산성을 높이고 인프라 관리에 대한 부담을 줄여줍니다.",
+    "homepage": "https://azure.microsoft.com/en-us/products/functions/",
+    "repo": "https://github.com/Azure/azure-functions",
+    "project_suitability": [
+      "API 엔드포인트 구축: HTTP 요청에 응답하는 간단한 API를 빠르게 개발하고 배포할 수 있습니다.",
+      "이벤트 기반 처리: Azure Storage, Event Hubs, Service Bus 등에서 발생하는 이벤트를 처리하는 로직을 구현합니다.",
+      "백엔드 작업: 데이터베이스 업데이트, 파일 처리, 알림 전송 등 백그라운드 작업을 실행합니다.",
+      "IoT 시나리오: IoT 디바이스에서 전송된 데이터를 처리하고 분석하는 데 사용됩니다."
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "서버리스 개념, 트리거, 바인딩, Azure 서비스 연동에 대한 이해가 필요하며, 언어별 런타임 환경 설정에 대한 학습이 필요합니다."
+    },
+    "updated_at": "2025-11-28T04:44:44.665"
+  },
+  {
+    "name": "AWS",
+    "slug": "aws",
+    "category": "devops",
+    "description": "AWS(Amazon Web Services)는 아마존에서 제공하는 클라우드 컴퓨팅 플랫폼으로, 다양한 IT 서비스를 제공하여 인프라 구축 및 관리를 용이하게 합니다.",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://aws.amazon.com/ko/getting-started/",
+        "type": "tutorial",
+        "title": "AWS 시작하기: 단계별 튜토리얼"
+      },
+      {
+        "url": "https://aws.amazon.com/ko/documentation/",
+        "type": "documentation",
+        "title": "AWS 공식 설명서: 각 서비스별 자세한 안내"
+      },
+      {
+        "url": "https://www.youtube.com/user/AmazonWebServices",
+        "type": "video",
+        "title": "AWS YouTube 채널: 기술 데모 및 강좌"
+      },
+      {
+        "url": "https://aws.amazon.com/ko/blogs/",
+        "type": "blog",
+        "title": "AWS 블로그: 최신 업데이트 및 기술 팁"
+      }
+    ],
+    "ai_explanation": "AWS는 컴퓨팅, 스토리지, 데이터베이스, 네트워킹, 인공지능/머신러닝 등 광범위한 서비스를 제공하며, 전 세계적으로 널리 사용되는 클라우드 플랫폼입니다. 탄력적인 확장성과 다양한 서비스 조합을 통해 스타트업부터 대기업까지 모든 규모의 기업에 적합합니다. 공식 홈페이지의 쿠키 설정을 통해 사용자 경험을 개선하고, 개인정보 보호 설정을 제공합니다. 최근 Amazon Bedrock AgentCore, Amazon Quick Suite, Project Rainier 등의 AI 관련 서비스를 강화하여, 생성형 AI 및 머신러닝 분야에서 AWS의 입지를 더욱 강화하고 있습니다. AWS re:Invent 와 같은 대규모 이벤트를 통해 최신 기술 동향을 공유하고 개발자 커뮤니티를 지원합니다. 또한, NFL Big Data Bowl과 같은 스포츠 관련 데이터 분석 행사도 진행하며, AWS의 활용 범위를 넓혀가고 있습니다.",
+    "homepage": "https://aws.amazon.com/",
+    "repo": "https://github.com/aws",
+    "project_suitability": [
+      "대규모 웹 애플리케이션 및 서비스",
+      "데이터 분석 및 머신러닝 프로젝트",
+      "DevOps 환경 구축 및 자동화",
+      "IT 인프라 확장 및 관리의 유연성 확보가 필요한 경우",
+      "글로벌 서비스를 위한 인프라 구축"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "AWS는 방대한 서비스와 복잡한 설정으로 인해 초기 학습 곡선이 존재하지만, 다양한 공식 문서와 커뮤니티 지원을 통해 충분히 학습 가능합니다."
+    },
+    "updated_at": "2025-11-28T04:45:05.295"
+  },
+  {
+    "name": "JavaScript",
+    "slug": "javascript",
+    "category": "language",
+    "description": "웹 개발을 위한 핵심 프로그래밍 언어, 동적이고 유연한 웹 페이지 제작에 필수적.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://developer.mozilla.org/ko/docs/Web/JavaScript",
+        "type": "documentation",
+        "title": "MDN Web Docs - JavaScript 공식 문서"
+      },
+      {
+        "url": "https://ko.javascript.info/",
+        "type": "tutorial",
+        "title": "모던 JavaScript 튜토리얼 (자바스크립트.info)"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLill0k7g2kJh59Yj9wG3k9NJO6hL31z3x",
+        "type": "video",
+        "title": "드림코딩 by 엘리 - JavaScript 입문 강의"
+      },
+      {
+        "url": "https://poiemaweb.com/js-introduction",
+        "type": "tutorial",
+        "title": "PoiemaWeb - JavaScript 기본 강좌"
+      }
+    ],
+    "ai_explanation": "JavaScript는 웹 브라우저에서 실행되는 스크립트 언어로, 웹 페이지의 동적 기능을 구현하는 데 사용됩니다. HTML과 CSS를 보완하여 사용자 인터랙션, 데이터 처리, 애니메이션 등 다양한 기능을 가능하게 합니다. ECMAScript 표준을 따르며, Node.js와 같은 런타임을 통해 서버 측 개발에도 활용됩니다. 다양한 프레임워크와 라이브러리(React, Angular, Vue.js 등)를 통해 복잡한 웹 애플리케이션 개발을 지원하며, 지속적인 업데이트와 발전을 통해 웹 개발 생태계의 핵심 기술로 자리 잡았습니다. ECMAScript 명세는 JavaScript의 표준을 정의하며, 최신 웹 개발 트렌드를 반영합니다. 브라우저 호환성을 위한 꾸준한 노력이 필요하며, 웹 개발자에게 필수적인 기술입니다.",
+    "homepage": "https://www.ecma-international.org/ecma-262/",
+    "repo": null,
+    "project_suitability": [
+      "다양한 웹 애플리케이션 개발에 적합하며, 프론트엔드 및 백엔드 개발 모두 가능합니다.",
+      "SPA(Single Page Application) 및 동적인 웹 페이지 구축에 이상적입니다.",
+      "사용자 인터랙션이 많은 웹 사이트, 웹 게임, 웹 기반 도구 개발에 활용됩니다.",
+      "서버리스 아키텍처 및 API 기반 백엔드 구축에도 유용합니다.",
+      "모바일 앱 개발(React Native)에도 사용되어 폭넓은 프로젝트에 적용됩니다."
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "기본 문법은 쉬우나, 비동기 처리, 클로저, 프로토타입 등 심화 개념 학습에 시간이 필요합니다. 프레임워크와 라이브러리 학습도 난이도를 높이는 요인입니다."
+    },
+    "updated_at": "2025-11-28T04:51:22.671"
+  },
+  {
+    "name": "PyTorch",
+    "slug": "pytorch",
+    "category": "library",
+    "description": "PyTorch는 딥러닝 연구 및 개발을 위한 오픈 소스 머신러닝 프레임워크입니다. 유연성과 직관적인 사용성을 제공하며, 다양한 딥러닝 모델 구축에 활용됩니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://pytorch.org/get-started/locally/",
+        "type": "tutorial",
+        "title": "PyTorch 시작하기 (로컬 설치)"
+      },
+      {
+        "url": "https://pytorch.org/tutorials/",
+        "type": "tutorial",
+        "title": "PyTorch 튜토리얼 (기본, 심화)"
+      },
+      {
+        "url": "https://pytorch.org/docs/stable/index.html",
+        "type": "documentation",
+        "title": "PyTorch 공식 문서"
+      },
+      {
+        "url": "https://pytorch.org/tutorials/beginner/introyt.html",
+        "type": "tutorial",
+        "title": "Intro to PyTorch – YouTube Series"
+      }
+    ],
+    "ai_explanation": "PyTorch는 Facebook의 AI 연구팀에서 개발되었으며, Python 기반으로 GPU 가속을 지원하여 딥러닝 모델의 빠른 학습을 가능하게 합니다. 동적 계산 그래프를 지원하여 복잡한 모델 구조를 유연하게 정의하고, 디버깅을 용이하게 합니다. 튜토리얼과 예제가 풍부하여 초보자도 쉽게 학습할 수 있으며, 활발한 커뮤니티 지원을 받을 수 있습니다. Computer Vision, NLP, Reinforcement Learning 등 다양한 분야에서 널리 사용되며, 모델 배포 및 추론을 위한 기능도 제공합니다. PyTorch 생태계는 모델, 라이브러리, 툴을 포함하여 확장성이 뛰어나며, 다양한 프로젝트에 적용 가능합니다.",
+    "homepage": "https://pytorch.org",
+    "repo": "https://github.com/pytorch/pytorch",
+    "project_suitability": [
+      "자연어 처리 (NLP) 모델 개발 프로젝트",
+      "이미지 인식, 객체 탐지 등 컴퓨터 비전(CV) 기반 프로젝트",
+      "강화 학습 (Reinforcement Learning) 기반 시뮬레이션 및 모델 개발",
+      "딥러닝 기반의 연구 및 프로토타입 개발",
+      "대규모 데이터셋을 활용하는 딥러닝 모델 학습"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "파이썬과 딥러닝 기본 지식이 필요하며, 텐서 개념과 모델 구축, 학습 과정을 이해해야 합니다. 기본적인 딥러닝 프레임워크 사용 경험이 있다면 쉽게 적응할 수 있습니다."
+    },
+    "updated_at": "2025-11-28T04:51:50.958"
+  },
+  {
+    "name": "React Native",
+    "slug": "react-native",
+    "category": "mobile",
+    "description": "React Native는 JavaScript로 네이티브 모바일 앱을 개발하는 프레임워크입니다. Android 및 iOS 플랫폼을 지원하며, UI 컴포넌트를 네이티브 코드로 렌더링합니다.",
+    "logoUrl": "",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://reactnative.dev/docs/getting-started",
+        "type": "documentation",
+        "title": "React Native 공식 시작하기 가이드"
+      },
+      {
+        "url": "https://reactnative.dev/docs/components-and-apis",
+        "type": "documentation",
+        "title": "React Native 컴포넌트 및 API 문서"
+      },
+      {
+        "url": "https://expo.dev/",
+        "type": "documentation",
+        "title": "Expo 공식 웹사이트 - React Native 개발 프레임워크"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=0-S5a0eXPjQ",
+        "type": "video",
+        "title": "React Native 핵심 개념 및 개발 과정 소개 (유튜브)"
+      }
+    ],
+    "ai_explanation": "React Native는 React의 원리를 모바일 앱 개발에 적용한 프레임워크로, JavaScript를 사용하여 iOS 및 Android 앱을 구축할 수 있습니다. 'Learn once, write anywhere'를 표방하며, 코드 재사용성을 높여 개발 효율성을 향상시킵니다. 네이티브 UI 컴포넌트를 활용하여 사용자 경험을 최적화하고, Expo와 같은 프레임워크를 통해 개발 환경 설정을 간소화합니다. 풍부한 커뮤니티 지원을 통해 다양한 라이브러리 및 SDK를 활용할 수 있으며, 페이스북, Microsoft 등에서 지원을 받고 있습니다. 파일 기반 라우팅, 개발 도구, 네이티브 코드 사용 등 다양한 기능을 제공하며, Facebook, Facebook Ads Manager, Meta Horizon, Messenger Desktop, Microsoft Office 등 다양한 앱에서 사용되고 있습니다.",
+    "homepage": "https://reactnative.dev/",
+    "repo": "https://github.com/facebook/react-native",
+    "project_suitability": [
+      "복잡한 UI/UX를 요구하는 iOS 및 Android 앱 개발",
+      "JavaScript 개발 경험을 가진 팀이 빠르게 모바일 앱을 개발해야 하는 경우",
+      "코드 재사용을 통해 개발 생산성을 높이고 싶은 경우",
+      "네이티브 성능과 사용자 경험을 동시에 추구하는 앱 개발",
+      "다양한 플랫폼(Android, iOS, Web)을 지원하는 앱 개발"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "React와 JavaScript에 대한 이해가 필요하며, 네이티브 플랫폼(iOS, Android)의 기본적인 지식도 도움이 됩니다. Expo와 같은 툴을 사용하면 학습 곡선을 완만하게 할 수 있습니다."
+    },
+    "updated_at": "2025-11-28T04:53:00.311"
+  },
+  {
+    "name": "PHP",
+    "slug": "php",
+    "category": "language",
+    "description": "웹 개발을 위한 서버 측 스크립트 언어. 동적 웹 페이지 생성에 특화.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://www.php.net/docs.php",
+        "type": "documentation",
+        "title": "공식 PHP 매뉴얼 - 언어 레퍼런스, 함수, 확장 기능 등 상세 설명"
+      },
+      {
+        "url": "https://laracasts.com/",
+        "type": "video",
+        "title": "Laracasts - Laravel 프레임워크 관련 튜토리얼 (유료 컨텐츠 포함)"
+      },
+      {
+        "url": "https://www.php.net/manual/en/tutorial.php",
+        "type": "tutorial",
+        "title": "PHP 공식 튜토리얼 - PHP 기초 문법 및 사용법 소개"
+      },
+      {
+        "url": "https://www.udemy.com/courses/development/web-development/php/",
+        "type": "video",
+        "title": "Udemy PHP 강좌 - 기초부터 심화까지 다양한 PHP 강좌"
+      }
+    ],
+    "ai_explanation": "PHP는 웹 개발에 널리 사용되는 서버 측 스크립트 언어입니다. HTML에 임베딩되어 동적 웹 페이지를 생성하며, MySQL, PostgreSQL 등 다양한 데이터베이스와의 연동을 지원합니다. 초창기에는 단순한 웹 페이지 제작에 사용되었지만, 현재는 Laravel, Symfony와 같은 강력한 프레임워크의 등장으로 대규모 웹 애플리케이션 개발에도 활용됩니다. PHP 8 버전부터 성능 향상과 새로운 기능들이 지속적으로 추가되면서, 높은 생산성과 유연성을 제공합니다. 대규모 커뮤니티와 풍부한 리소스, 방대한 라이브러리를 통해 개발 생산성을 높일 수 있으며, 워드프레스와 같은 CMS (Content Management System)의 기반 기술로도 널리 사용됩니다.",
+    "homepage": "https://www.php.net/",
+    "repo": "https://github.com/php/php-src",
+    "project_suitability": [
+      "다양한 규모의 웹 애플리케이션 개발에 적합합니다.",
+      "특히, 데이터베이스 기반의 웹사이트, CMS, e-commerce 플랫폼 개발에 강점을 보입니다.",
+      "Laravel, Symfony와 같은 프레임워크를 사용하여 복잡한 프로젝트도 효율적으로 개발 가능합니다.",
+      "초보 개발자도 쉽게 접근할 수 있으며, 방대한 자료와 커뮤니티 지원을 받을 수 있습니다."
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "기본적인 문법은 배우기 쉽지만, 프레임워크, 디자인 패턴, 보안 등 심층적인 부분을 익히려면 시간이 필요합니다. 방대한 자료와 커뮤니티 지원이 학습에 도움이 됩니다."
+    },
+    "updated_at": "2025-11-28T04:53:16.028"
+  },
+  {
+    "name": "Vite",
+    "slug": "vite",
+    "category": "tool",
+    "description": "웹 개발 빌드 도구, 빠른 개발 서버 및 번들링 기능을 제공하며, 차세대 웹 애플리케이션 구축에 특화.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://vitejs.dev/guide/",
+        "type": "documentation",
+        "title": "Vite 공식 가이드"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=bmWQqAKLgT4",
+        "type": "video",
+        "title": "Vite 소개 영상 (The Documentary)"
+      },
+      {
+        "url": "https://github.com/vitejs/awesome-vite",
+        "type": "tutorial",
+        "title": "Awesome Vite - 다양한 사용 예제 모음"
+      }
+    ],
+    "ai_explanation": "Vite는 웹 개발 환경을 혁신하는 빌드 도구입니다. 기존 Webpack 기반 환경보다 훨씬 빠른 개발 서버 시작 속도와 HMR(Hot Module Replacement)을 제공하여 개발 생산성을 크게 향상시킵니다. 네이티브 ESM(ECMAScript Modules)을 기반으로, 번들링 과정 없이 파일을 즉시 제공하며, 필요에 따라 최적화된 번들링을 수행합니다. Vue.js의 개발자가 만들었지만, React, Preact, Svelte 등 다양한 프레임워크와 호환됩니다. 플러그인 시스템을 통해 다양한 기능을 확장할 수 있으며, 코드 분할, CSS 처리, 자산 관리 등 웹 개발에 필요한 모든 기능을 지원합니다. 프로덕션 환경에서는 롤업(Rollup)을 사용하여 최적화된 번들링을 수행합니다. ViteConf와 같은 커뮤니티 행사와 활발한 개발자 커뮤니티를 통해 지속적으로 발전하고 있습니다.",
+    "homepage": "https://vitejs.dev/",
+    "repo": "https://github.com/vitejs/vite",
+    "project_suitability": [
+      "빠른 개발 속도가 중요한 프로젝트",
+      "단일 페이지 애플리케이션 (SPA) 또는 서버 사이드 렌더링 (SSR)을 사용하는 프로젝트",
+      "React, Vue, Svelte 등 최신 프레임워크를 사용하는 프로젝트",
+      "대규모 웹 애플리케이션 개발 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "기본적인 웹 개발 지식과 JavaScript, 모듈 시스템에 대한 이해가 필요하며, 플러그인 설정 및 빌드 과정에 대한 학습이 필요합니다."
+    },
+    "updated_at": "2025-12-02T03:07:32.499044+00:00"
+  },
+  {
+    "name": "TensorFlow",
+    "slug": "tensorflow",
+    "category": "library",
+    "description": "다양한 머신러닝 모델 구축을 위한 오픈소스 플랫폼. 딥러닝, ML 연구 및 배포 지원.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://www.tensorflow.org/learn",
+        "type": "tutorial",
+        "title": "TensorFlow 공식 튜토리얼: TensorFlow 시작하기"
+      },
+      {
+        "url": "https://www.tensorflow.org/api_docs",
+        "type": "documentation",
+        "title": "TensorFlow API 문서: TensorFlow의 다양한 API 설명"
+      },
+      {
+        "url": "https://www.youtube.com/tensorflow",
+        "type": "video",
+        "title": "TensorFlow YouTube 채널: 다양한 예제 및 강좌 제공"
+      },
+      {
+        "url": "https://www.tensorflow.org/resources/models-datasets",
+        "type": "tutorial",
+        "title": "사전 학습된 모델 및 데이터세트: 튜토리얼 및 예제 제공"
+      }
+    ],
+    "ai_explanation": "TensorFlow는 구글에서 개발한 강력한 오픈소스 머신러닝 라이브러리입니다. 딥러닝 모델 개발 및 배포를 위한 포괄적인 생태계를 제공하며, 다양한 프로그래밍 언어(주로 Python)를 지원합니다. TensorFlow는 이미지 인식, 자연어 처리, 시계열 예측 등 광범위한 분야에서 활용됩니다.  TensorFlow.js를 통해 웹 브라우저에서도 머신러닝 모델을 실행할 수 있으며, TensorFlow Lite를 사용하면 모바일 및 임베디드 장치에서도 모델을 배포할 수 있습니다. TensorFlow Extended (TFX)는 프로덕션 환경에서의 머신러닝 파이프라인 구축을 위한 도구들을 제공합니다.  다양한 API와 풍부한 커뮤니티 리소스를 통해 초보자부터 전문가까지 쉽게 접근하여 머신러닝 프로젝트를 수행할 수 있습니다.",
+    "homepage": "https://www.tensorflow.org/",
+    "repo": "https://github.com/tensorflow/tensorflow",
+    "project_suitability": [
+      "이미지 분류 및 객체 감지 프로젝트",
+      "자연어 처리 기반의 챗봇 및 텍스트 분석 시스템",
+      "시계열 데이터 예측 (주가, 날씨 등) 애플리케이션",
+      "모바일 및 임베디드 장치에서의 머신러닝 모델 실행",
+      "대규모 머신러닝 모델 배포 및 관리 플랫폼"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "머신러닝 및 딥러닝에 대한 기본적인 이해가 필요하며, Python 프로그래밍 경험이 있으면 학습에 도움이 됩니다. TensorFlow의 API 사용법과 모델 구축에 대한 학습 곡선이 존재합니다."
+    },
+    "updated_at": "2025-12-02T03:10:18.135450+00:00"
+  },
+  {
+    "name": "Kubernetes",
+    "slug": "kubernetes",
+    "category": "devops",
+    "description": "컨테이너화된 애플리케이션의 배포, 확장 및 관리를 자동화하는 오픈 소스 플랫폼.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://kubernetes.io/docs/",
+        "type": "documentation",
+        "title": "Kubernetes 공식 문서"
+      },
+      {
+        "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+        "type": "tutorial",
+        "title": "Kubernetes 기본 튜토리얼"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLj5jWj6mYp-2vWp-qE5_mBf5_Q-3T31L0",
+        "type": "video",
+        "title": "Kubernetes by Google Cloud (YouTube)"
+      },
+      {
+        "url": "https://kubernetes.io/blog/",
+        "type": "blog",
+        "title": "Kubernetes 블로그 (최신 정보 확인)"
+      }
+    ],
+    "ai_explanation": "Kubernetes(K8s)는 Google의 15년 이상 생산 환경 운영 노하우를 바탕으로 개발된 컨테이너 오케스트레이션 시스템입니다. 컨테이너화된 애플리케이션의 배포, 스케일링, 관리 자동화를 목표로, 애플리케이션을 논리적 단위로 묶어 관리합니다. 자동화된 롤아웃과 롤백, 서비스 디스커버리, 로드 밸런싱, 스토리지 오케스트레이션, 시크릿 및 설정 관리, 자동 빈 패킹 등 다양한 기능을 제공합니다. 온-프레미스, 하이브리드, 퍼블릭 클라우드 환경에서 모두 사용 가능하며, 지속적인 업데이트와 방대한 커뮤니티 지원을 통해 빠르게 발전하고 있습니다. 다양한 배포 솔루션을 지원하며, 애플리케이션의 가용성과 확장성을 극대화하는 데 중점을 둡니다.",
+    "homepage": "https://kubernetes.io",
+    "repo": "https://github.com/kubernetes/kubernetes",
+    "project_suitability": [
+      "마이크로서비스 아키텍처 기반의 애플리케이션 배포 및 관리",
+      "자동화된 CI/CD 파이프라인 구축 및 운영",
+      "높은 가용성과 확장성을 요구하는 웹 애플리케이션",
+      "다양한 클라우드 환경 (AWS, GCP, Azure 등)에서의 컨테이너 운영",
+      "DevOps 환경 구축을 통해 개발 생산성 향상"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "컨테이너, 네트워킹, 스토리지 등 기본적인 IT 지식과 개념에 대한 이해가 필요하며, 학습 곡선이 존재합니다. 하지만, 튜토리얼과 커뮤니티 지원을 통해 충분히 학습 가능합니다."
+    },
+    "updated_at": "2025-12-02T03:12:56.696623+00:00"
+  },
+  {
+    "name": "AI-First Stack",
+    "slug": "ai-first-stack",
+    "category": "tool",
+    "description": "AI-First Stack은 AI 기술을 핵심으로 하는 애플리케이션 개발 방식 및 아키텍처를 의미합니다. AI 모델 통합, 데이터 중심 설계, 자동화된 개발 프로세스를 특징으로 합니다.",
+    "logoUrl": "",
+    "popularity": 100,
+    "learning_resources": [
+      {
+        "url": "https://www.tensorflow.org/tutorials",
+        "type": "tutorial",
+        "title": "TensorFlow 튜토리얼: 딥러닝 모델 개발 및 훈련"
+      },
+      {
+        "url": "https://pytorch.org/tutorials/",
+        "type": "tutorial",
+        "title": "PyTorch 튜토리얼: 신경망 구축 및 훈련"
+      },
+      {
+        "url": "https://cloud.google.com/learn/machine-learning",
+        "type": "tutorial",
+        "title": "Google Cloud 머신러닝 학습 자료"
+      },
+      {
+        "url": "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t",
+        "type": "tutorial",
+        "title": "Udacity 머신러닝 엔지니어 Nanodegree"
+      }
+    ],
+    "ai_explanation": "AI-First Stack은 기존 개발 방식과 달리, AI 모델을 애플리케이션의 핵심 구성 요소로 통합하는 접근 방식입니다. 이는 AI 모델의 지속적인 학습, 업데이트, 배포를 고려하여 설계되며, 데이터 수집, 전처리, 모델 훈련, 배포, 모니터링 전반에 걸쳐 AI를 활용합니다. AI 모델을 애플리케이션의 주요 기능으로 간주하며, 사용자 경험 최적화, 자동화된 의사 결정, 새로운 서비스 창출 등을 목표로 합니다. AI 모델의 성능을 향상시키기 위해 데이터 중심 설계가 필수적이며, MLOps (Machine Learning Operations) 방법론을 통해 개발, 배포, 운영 전반의 자동화를 추구합니다. 기술 스택은 특정 AI 프레임워크 (TensorFlow, PyTorch 등)와 클라우드 서비스 (AWS, Azure, GCP 등)를 중심으로 구성될 수 있습니다.",
+    "homepage": null,
+    "repo": null,
+    "project_suitability": [
+      "AI 기반 추천 시스템을 구축하는 프로젝트",
+      "자연어 처리 기반 챗봇 또는 가상 비서 개발 프로젝트",
+      "이미지, 음성 인식 기반의 애플리케이션 개발",
+      "대량의 데이터를 분석하고 예측하는 서비스 구축",
+      "자동화된 의사결정을 필요로 하는 금융, 의료 분야 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "고급",
+      "stars": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "description": "AI, 머신러닝, 딥러닝, MLOps, 클라우드 컴퓨팅 등 다양한 전문 지식이 필요하며, 관련 경험과 실무 지식이 중요합니다."
+    },
+    "updated_at": "2025-12-02T03:38:02.995160+00:00"
+  },
+  {
+    "name": "LangChain",
+    "slug": "langchain",
+    "category": "library",
+    "description": "LangChain은 LLM(Large Language Model) 기반 애플리케이션 개발을 위한 프레임워크입니다. 에이전트 구축, 데이터 연결, 프롬프트 관리 등을 지원합니다.",
+    "logoUrl": "https://cdn.simpleicons.org/langchain",
+    "popularity": 75,
+    "learning_resources": [
+      {
+        "url": "https://docs.langchain.com/docs/get_started/",
+        "type": "documentation",
+        "title": "공식 문서 - 시작하기"
+      },
+      {
+        "url": "https://python.langchain.com/docs/get_started/quickstart",
+        "type": "tutorial",
+        "title": "Python Quickstart 튜토리얼"
+      },
+      {
+        "url": "https://github.com/langchain-ai/langchain",
+        "type": "documentation",
+        "title": "GitHub 레포지토리"
+      },
+      {
+        "url": "https://smith.langchain.com/",
+        "type": "tool",
+        "title": "LangSmith 플랫폼"
+      }
+    ],
+    "ai_explanation": "LangChain은 OpenAI, Google, Cohere 등 다양한 LLM 모델을 쉽게 통합하여 애플리케이션을 구축할 수 있도록 설계된 강력한 프레임워크입니다. 에이전트 엔지니어링을 위한 핵심 기능을 제공하며, RAG(Retrieval-Augmented Generation), 챗봇, 지식 기반 시스템 등 다양한 애플리케이션 개발에 활용될 수 있습니다. LangGraph를 통해 에이전트의 워크플로우를 세밀하게 제어하고, LangSmith를 활용하여 성능을 측정하고 개선할 수 있습니다. Python과 TypeScript를 지원하며, 지속적인 업데이트를 통해 새로운 기능과 모델을 지원합니다.",
+    "homepage": "https://docs.langchain.com/",
+    "repo": "https://github.com/langchain-ai/langchain",
+    "project_suitability": [
+      "자연어 처리 기반 챗봇 개발",
+      "LLM을 활용한 지식 검색 및 요약 시스템 구축",
+      "자동화된 에이전트(예: 데이터 분석 에이전트) 개발",
+      "사용자 정의 프롬프트 템플릿 및 체인 관리"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "LLM의 기본적인 이해와 Python(또는 TypeScript)에 대한 지식이 필요합니다. LangChain의 다양한 개념과 기능을 익히는 데 시간이 소요될 수 있습니다. LangSmith를 활용하면 학습 곡선을 완만하게 할 수 있습니다."
+    },
+    "updated_at": "2025-11-28T04:52:18.262"
+  },
+  {
+    "name": "Express.js",
+    "slug": "expressdotjs",
+    "category": "backend",
+    "description": "Node.js 기반의 빠르고 유연한 웹 애플리케이션 프레임워크. 서버 개발을 간소화합니다.",
+    "logoUrl": "",
+    "popularity": 50,
+    "learning_resources": [
+      {
+        "url": "https://expressjs.com/",
+        "type": "documentation",
+        "title": "Express.js 공식 문서"
+      },
+      {
+        "url": "https://expressjs.com/en/starter/installing.html",
+        "type": "tutorial",
+        "title": "Express.js 시작하기 튜토리얼"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=L72fhGm1tfE",
+        "type": "video",
+        "title": "Node.js Express.js 강좌 (생활코딩)"
+      },
+      {
+        "url": "https://book.naver.com/bookdb/book_detail.naver?bid=16301322",
+        "type": "book",
+        "title": "Node.js 교과서 (2판)"
+      }
+    ],
+    "ai_explanation": "Express.js는 Node.js 환경에서 서버 측 애플리케이션 개발을 위한 강력한 프레임워크입니다. 라우팅, 미들웨어, 템플릿 엔진 지원 등 웹 애플리케이션 구축에 필요한 핵심 기능을 제공하며, Node.js의 비동기 I/O 모델을 활용하여 높은 성능을 보장합니다. 다양한 미들웨어와 확장성을 통해 RESTful API, 싱글 페이지 애플리케이션, 실시간 웹 애플리케이션 등 다양한 유형의 프로젝트에 적합합니다. npm 생태계와의 높은 호환성을 바탕으로, 개발 생산성을 극대화하며, MongoDB, MySQL 등 다양한 데이터베이스와의 통합을 용이하게 합니다. Express.js는 2024년에도 Node.js 백엔드 개발의 핵심 프레임워크로 자리 잡고 있으며, 지속적인 업데이트와 커뮤니티 지원을 통해 발전하고 있습니다.",
+    "homepage": null,
+    "repo": null,
+    "project_suitability": [
+      "RESTful API 구축 프로젝트에 적합합니다.",
+      "실시간 웹 애플리케이션(채팅, 스트리밍) 개발에 활용될 수 있습니다.",
+      "싱글 페이지 애플리케이션(SPA)의 백엔드 서버 구축에 사용됩니다.",
+      "마이크로서비스 아키텍처 기반의 애플리케이션 개발에 적합합니다."
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Node.js와 JavaScript에 대한 기본적인 이해가 필요하며, 라우팅, 미들웨어, API 개발에 대한 지식이 요구됩니다. Express.js 자체는 배우기 쉽지만, 실제 프로젝트에 적용하려면 Node.js 생태계에 대한 전반적인 이해가 필요합니다."
+    },
+    "updated_at": "2025-11-21T06:22:47.107"
+  },
+  {
+    "name": "Python",
+    "slug": "python",
+    "category": "language",
+    "description": "Python은 객체 지향적, 인터프리터 방식의 고수준 프로그래밍 언어입니다. 간결하고 가독성이 높아 다양한 분야에서 활용되며, 방대한 라이브러리와 프레임워크 생태계를 자랑합니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "popularity": 50,
+    "learning_resources": [
+      {
+        "url": "https://www.python.org/doc/",
+        "type": "documentation",
+        "title": "공식 Python 문서 - 언어 레퍼런스, 튜토리얼, 라이브러리"
+      },
+      {
+        "url": "https://docs.python.org/3/tutorial/index.html",
+        "type": "tutorial",
+        "title": "Python 튜토리얼 - Python 공식 튜토리얼, 입문자를 위한 가이드"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PL-osiE80TeTuAvsd972G5x8h4wG_6a1gI",
+        "type": "video",
+        "title": "파이썬 코딩 무료 강의 (Udemy) - 기초부터 활용까지 학습"
+      },
+      {
+        "url": "https://wikidocs.net/book/1",
+        "type": "tutorial",
+        "title": "점프 투 파이썬 - 파이썬 입문자를 위한 튜토리얼"
+      }
+    ],
+    "ai_explanation": "Python은 1991년 Guido van Rossum에 의해 개발된 다목적 프로그래밍 언어입니다. 문법이 쉽고 직관적이며, 다양한 운영체제에서 호환됩니다. 특히 데이터 과학, 머신 러닝, 웹 개발 분야에서 널리 사용되며, Django, Flask와 같은 강력한 웹 프레임워크와 NumPy, Pandas, Scikit-learn과 같은 풍부한 라이브러리를 제공합니다. 공식 홈페이지는 언어의 최신 정보, 문서, 튜토리얼, 그리고 커뮤니티 활동에 대한 정보를 제공하며, Python Package Index (PyPI)를 통해 수많은 오픈 소스 패키지를 활용할 수 있습니다. 2024년 현재, Python 3.x 버전이 주류로 사용되며, 지속적인 업데이트와 개선을 통해 더욱 강력하고 효율적인 언어로 발전하고 있습니다. 다양한 분야에서의 높은 활용도는 Python의 강력한 생태계와 높은 생산성을 보여줍니다.",
+    "homepage": "https://www.python.org/",
+    "repo": "https://github.com/python/cpython",
+    "project_suitability": [
+      "웹 애플리케이션 개발 (Django, Flask)",
+      "데이터 분석 및 과학 (NumPy, Pandas, Scikit-learn)",
+      "머신 러닝 및 인공지능 (TensorFlow, PyTorch)",
+      "자동화 스크립트 작성",
+      "백엔드 시스템 구축"
+    ],
+    "learning_difficulty": {
+      "label": "초급",
+      "stars": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "description": "Python은 문법이 쉽고 직관적이어서 프로그래밍 입문자도 쉽게 배울 수 있습니다. 다양한 온라인 튜토리얼과 방대한 자료가 학습을 돕습니다."
+    },
+    "updated_at": "2025-12-02T04:57:03.306379+00:00"
+  },
+  {
+    "name": "Next.js",
+    "slug": "nextdotjs",
+    "category": "framework",
+    "description": "Next.js는 React 기반의 웹 애플리케이션 프레임워크로, 서버 사이드 렌더링(SSR) 및 정적 사이트 생성(SSG)을 지원하여 성능과 SEO를 최적화합니다.",
+    "logoUrl": "https://cdn.simpleicons.org/nextdotjs",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://nextjs.org/learn",
+        "type": "tutorial",
+        "title": "Next.js 공식 튜토리얼: Next.js의 기본 개념과 사용법 학습"
+      },
+      {
+        "url": "https://nextjs.org/docs",
+        "type": "documentation",
+        "title": "Next.js 공식 문서: 상세 기능 및 API 레퍼런스 확인"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=IdIgkiDu-94",
+        "type": "video",
+        "title": "Next.js Conf 25 리캡 영상: 최신 기능 및 업데이트 정보 확인"
+      },
+      {
+        "url": "https://vercel.com/templates/next.js",
+        "type": "tutorial",
+        "title": "Next.js 템플릿: 다양한 템플릿을 통해 프로젝트 시작"
+      }
+    ],
+    "ai_explanation": "Next.js는 Vercel에서 개발 및 유지보수하는 React 프레임워크입니다.  주요 특징으로는 서버 사이드 렌더링(SSR) 및 정적 사이트 생성(SSG)을 지원하여 초기 로딩 속도와 SEO(검색 엔진 최적화)를 향상시킨다는 점입니다.  파일 시스템 기반 라우팅을 통해 간편한 페이지 관리가 가능하며,  API 라우트 기능을 내장하여 백엔드 서버 구축 없이 API 엔드포인트를 정의할 수 있습니다.  CSS Modules, Tailwind CSS 등 다양한 스타일링 옵션을 제공하며,  이미지 최적화, 코드 분할,  데이터 페칭 등의 기능을 통해 개발 생산성을 높입니다.  최신 버전에서는 React Server Components를 지원하여 서버에서 렌더링되는 컴포넌트를 통해 클라이언트 측 JavaScript 번들을 줄여 성능을 더욱 향상시킬 수 있습니다.",
+    "homepage": "https://nextjs.org/",
+    "repo": "https://github.com/vercel/next.js",
+    "project_suitability": [
+      "다양한 유형의 웹 애플리케이션에 적합합니다. 특히, SEO가 중요한 마케팅 웹사이트나 블로그에 적합합니다.",
+      "빠른 초기 로딩 속도와 사용자 경험(UX) 향상이 필요한 웹 애플리케이션에 적합합니다.",
+      "서버 사이드 렌더링 및 정적 사이트 생성을 통해 성능을 최적화해야 하는 프로젝트에 적합합니다.",
+      "API 라우팅 기능을 활용하여 백엔드 개발 없이 프론트엔드 개발을 진행하려는 경우에 적합합니다.",
+      "대규모 트래픽을 처리하고 높은 성능을 요구하는 웹 애플리케이션에 적합합니다."
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "React에 대한 기본적인 이해가 필요하며, Next.js의 다양한 기능을 익히는 데 시간이 소요됩니다.  하지만 공식 문서와 튜토리얼이 잘 정리되어 있어 학습 곡선이 완만합니다."
+    },
+    "updated_at": "2025-11-21T06:23:14.831"
+  },
+  {
+    "name": "Kotlin",
+    "slug": "kotlin",
+    "category": "language",
+    "description": "Kotlin은 JVM, JavaScript, 네이티브 코드를 지원하는 간결하고 실용적인 멀티플랫폼 프로그래밍 언어입니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://kotlinlang.org/docs/home.html",
+        "type": "documentation",
+        "title": "공식 Kotlin 문서 (언어 가이드, 멀티플랫폼 개발 등)"
+      },
+      {
+        "url": "https://play.kotlinlang.org/",
+        "type": "tutorial",
+        "title": "Kotlin Playground (온라인 코드 실행 및 학습)"
+      },
+      {
+        "url": "https://kotlinlang.org/docs/android-overview.html",
+        "type": "documentation",
+        "title": "Android 개발 가이드 (안드로이드 개발 관련 문서)"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLQ176FUIyIuV46c3qJ_t-xG463aJ52xW4",
+        "type": "video",
+        "title": "Kotlin 코틀린 기본 강좌 (생활코딩)"
+      }
+    ],
+    "ai_explanation": "Kotlin은 JetBrains에 의해 개발된 정적 형식의 프로그래밍 언어로, Java와 상호 운용성이 뛰어나 기존 Java 프로젝트에 쉽게 통합할 수 있습니다. 주요 특징으로는 간결한 문법, null safety, 코루틴을 통한 비동기 프로그래밍 지원 등이 있습니다.  다양한 플랫폼을 지원하여 안드로이드 앱 개발, 서버 사이드 개발,  프론트엔드 (JavaScript),  데이터 과학 등 광범위한 분야에서 활용됩니다. 특히,  Android 공식 개발 언어로 채택되면서  모바일 개발 분야에서  강세를 보이며,  멀티플랫폼 개발을 위한  KMP (Kotlin Multiplatform) 기술도 제공합니다.  Spring Boot와 같은  서버 사이드 프레임워크와의  통합도  원활하며,  JetBrains의  IntelliJ IDEA를  기반으로  뛰어난  개발 환경을  제공합니다. 최신 버전에서는  성능 개선과  API  개선이  꾸준히  이루어지고 있습니다.",
+    "homepage": "https://kotlinlang.org/",
+    "repo": "https://github.com/JetBrains/kotlin",
+    "project_suitability": [
+      "안드로이드 앱 개발 (Android Native)",
+      "서버 사이드 애플리케이션 개발 (Spring Boot, Ktor 등)",
+      "멀티플랫폼 모바일 앱 개발 (Kotlin Multiplatform)",
+      "데이터 과학 및 분석 프로젝트",
+      "기존 Java 기반 프로젝트의 점진적 전환"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Java를 경험한 개발자라면 비교적 쉽게 익힐 수 있습니다.  하지만, 코루틴,  확장 함수,  데이터 클래스 등 Kotlin 특유의 기능에 대한 이해가 필요합니다."
+    },
+    "updated_at": "2025-11-21T06:23:27.021"
+  },
+  {
+    "name": "OpenAI Codex",
+    "slug": "openai-codex",
+    "category": "tool",
+    "description": "OpenAI Codex는 자연어를 코드로 변환하는 AI 모델로, 개발 생산성을 혁신합니다. 코드 생성, 자동 완성, 버그 수정 등 다양한 코딩 작업을 지원합니다.",
+    "logoUrl": "",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://openai.com/ko-KR/codex/",
+        "type": "documentation",
+        "title": "OpenAI Codex 공식 홈페이지"
+      },
+      {
+        "url": "https://github.com/openai/codex",
+        "type": "documentation",
+        "title": "OpenAI Codex GitHub 저장소"
+      },
+      {
+        "url": "https://openai.com/blog/openai-codex/",
+        "type": "blog",
+        "title": "OpenAI Codex 소개 블로그"
+      }
+    ],
+    "ai_explanation": "OpenAI Codex는 OpenAI가 개발한 AI 모델로, 코드 생성, 자동 완성, 코드 번역, 버그 수정 등을 지원합니다. 텍스트 프롬프트를 기반으로 코드를 생성하며, 다양한 프로그래밍 언어를 지원합니다. VS Code, Cursor, Windsurf 등의 IDE 확장 프로그램과 CLI를 통해 터미널 환경에서도 사용할 수 있습니다. 개발자는 자연어로 원하는 기능을 설명하면 Codex가 해당 기능을 구현하는 코드를 생성하거나, 기존 코드의 버그를 수정하고, 새로운 기능을 추가하는 데 도움을 받을 수 있습니다. 실시간 협업과 비동기 작업을 원활하게 전환하도록 설계되었으며, 엔지니어링 팀의 생산성 향상에 기여합니다. ChatGPT Plus, Pro, Business, Edu, Enterprise 플랜을 통해 이용 가능합니다.",
+    "homepage": "https://openai.com/codex",
+    "repo": "https://github.com/openai/codex",
+    "project_suitability": [
+      "다양한 프로그래밍 언어를 사용해야 하는 프로젝트",
+      "코드 생성 및 자동 완성을 통해 개발 속도를 향상시키고 싶은 프로젝트",
+      "복잡한 코드의 버그를 효율적으로 수정해야 하는 프로젝트",
+      "코딩 초보자가 코드 이해를 돕고 학습을 지원하는 프로젝트",
+      "새로운 기능을 빠르게 프로토타입하고 실험해야 하는 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Codex 사용 자체는 쉬우나, 모델의 정확한 이해와 효율적인 활용을 위해서는 AI와 프로그래밍에 대한 기본적인 지식이 필요합니다."
+    },
+    "updated_at": "2025-11-21T06:36:48.501"
+  },
+  {
+    "name": "Supabase",
+    "slug": "supabase",
+    "category": "backend",
+    "description": "Supabase는 오픈소스 Firebase 대안으로, Postgres 기반의 백엔드 개발 플랫폼입니다. 인증, API, 스토리지 등 제공.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://supabase.com/docs",
+        "type": "documentation",
+        "title": "Supabase 공식 문서 - 상세 기능 설명 및 사용법 안내"
+      },
+      {
+        "url": "https://supabase.com/blog",
+        "type": "blog",
+        "title": "Supabase 블로그 - 최신 업데이트 및 튜토리얼 제공"
+      },
+      {
+        "url": "https://www.youtube.com/@supabase",
+        "type": "video",
+        "title": "Supabase 공식 유튜브 채널 - 튜토리얼 및 데모 영상"
+      }
+    ],
+    "ai_explanation": "Supabase는 PostgreSQL 데이터베이스를 중심으로 구축된 백엔드 개발 플랫폼입니다. Firebase의 오픈 소스 대안을 표방하며, 인증, 실시간 데이터, API 생성, 스토리지, 함수(Edge Functions) 등 다양한 기능을 제공합니다. 특히, PostgreSQL의 강력한 기능을 활용하여 데이터 모델링과 쿼리 성능을 최적화할 수 있습니다. Supabase는 개발자가 백엔드 인프라를 직접 관리하는 번거로움 없이 애플리케이션 개발에 집중할 수 있도록 돕습니다. 또한, 오픈 소스 특성상 커뮤니티의 기여를 통해 지속적으로 발전하고 있으며, 다양한 기술과의 통합을 지원하여 유연성을 제공합니다. Supabase는 특히 실시간 기능이 필요한 애플리케이션이나, Firebase의 종속성을 피하고 싶은 개발자에게 적합합니다.",
+    "homepage": "https://supabase.com/",
+    "repo": "https://github.com/supabase/supabase",
+    "project_suitability": [
+      "실시간 데이터 동기화가 필요한 애플리케이션 (채팅, 협업 도구 등)",
+      "Firebase의 대안을 찾는 프로젝트",
+      "PostgreSQL의 강력한 기능을 활용하고자 하는 프로젝트",
+      "백엔드 인프라 관리에 시간을 쏟고 싶지 않은 스타트업"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "PostgreSQL과 관련된 기본적인 지식이 필요하며, Supabase의 다양한 기능을 익히는 데 시간이 소요됩니다. API, 인증, 스토리지 등 각 기능에 대한 이해도 필요합니다."
+    },
+    "updated_at": "2025-11-21T06:45:35.721"
+  },
+  {
+    "name": "Tailwind CSS",
+    "slug": "tailwind-css",
+    "category": "tool",
+    "description": "Tailwind CSS는 유틸리티 클래스 기반 CSS 프레임워크로, 커스텀 디자인을 빠르고 쉽게 구현합니다.",
+    "logoUrl": "",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://tailwindcss.com/docs",
+        "type": "documentation",
+        "title": "Tailwind CSS 공식 문서 - 사용법, 설정, 컴포넌트"
+      },
+      {
+        "url": "https://tailwindcss.com/blog",
+        "type": "blog",
+        "title": "Tailwind CSS 블로그 - 최신 기능, 팁, 사용 사례"
+      },
+      {
+        "url": "https://www.youtube.com/c/TailwindLabs",
+        "type": "video",
+        "title": "Tailwind Labs YouTube 채널 - 튜토리얼 및 강좌"
+      },
+      {
+        "url": "https://ui.dev/tailwindcss-tutorial",
+        "type": "tutorial",
+        "title": "UI.dev Tailwind CSS 튜토리얼 - 단계별 학습 가이드"
+      }
+    ],
+    "ai_explanation": "Tailwind CSS는 미리 정의된 유틸리티 클래스를 사용하여 웹 페이지의 스타일을 지정하는 CSS 프레임워크입니다. 개발자는 각 요소에 대해 'text-center', 'p-4', 'bg-blue-500'과 같은 클래스를 적용하여 디자인을 구축합니다. 이 방식은 CSS 파일을 작성하는 시간을 절약하고 일관된 디자인 시스템을 유지하는 데 도움이 됩니다. Tailwind CSS는 또한 사용자 정의가 용이하며, 테마, 색상, 간격 등을 원하는 대로 설정할 수 있습니다. 2024년 현재, 다양한 UI 컴포넌트 라이브러리와 연동하여 더욱 생산적인 개발 환경을 제공하며, 반응형 디자인, 다크 모드, 애니메이션 등 최신 웹 디자인 트렌드를 쉽게 구현할 수 있도록 지원합니다. 하지만, 유틸리티 클래스가 많아 HTML 파일이 복잡해질 수 있고, 처음 학습하는 데 시간이 걸릴 수 있다는 단점도 있습니다.",
+    "homepage": "tailwindcss.com",
+    "repo": "github.com/tailwindlabs/tailwindcss",
+    "project_suitability": [
+      "맞춤형 디자인이 필요한 프로젝트",
+      "빠른 개발 속도가 요구되는 프로젝트 (프로토타입 제작, MVP)",
+      "디자인 시스템을 일관성 있게 유지해야 하는 프로젝트",
+      "UI 컴포넌트 라이브러리와 연동하여 사용 가능한 프로젝트",
+      "디자인 변경이 잦은 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "유틸리티 클래스를 익히는 데 시간이 걸리지만, 익숙해지면 CSS 작성 시간을 획기적으로 줄일 수 있습니다."
+    },
+    "updated_at": "2025-11-28T04:43:42.929"
+  },
+  {
+    "name": "Angular",
+    "slug": "angular",
+    "category": "framework",
+    "description": "Angular는 확장 가능한 웹 애플리케이션 구축을 위한 Google 기반의 프론트엔드 프레임워크입니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://angular.dev/docs",
+        "type": "documentation",
+        "title": "공식 Angular 문서: 프레임워크의 모든 것을 담은 상세 문서"
+      },
+      {
+        "url": "https://angular.dev/tutorials",
+        "type": "tutorial",
+        "title": "공식 Angular 튜토리얼: 단계별로 Angular를 배우는 실용적인 가이드"
+      },
+      {
+        "url": "https://angular.dev/essentials",
+        "type": "tutorial",
+        "title": "Angular 핵심 가이드: 핵심 개념을 빠르게 이해하는 가이드"
+      },
+      {
+        "url": "https://blog.angular.dev",
+        "type": "video",
+        "title": "Angular 블로그: 최신 업데이트 및 기술 정보를 얻을 수 있는 곳"
+      }
+    ],
+    "ai_explanation": "Angular는 구글에서 개발하고 유지보수하는 TypeScript 기반의 프레임워크로, 대규모 웹 애플리케이션 개발에 특화되어 있습니다. 컴포넌트 기반 아키텍처, 양방향 데이터 바인딩, 의존성 주입 등의 기능을 제공하여 코드의 재사용성과 유지보수성을 높입니다. Angular는 Signals를 활용한 반응형 프로그래밍을 통해 성능을 향상시키고, SSR(Server-Side Rendering), SSG(Static Site Generation) 및 Hydration을 지원하여 사용자 경험을 최적화합니다. 또한, Angular는 CLI(Command Line Interface)를 통해 개발 과정을 간소화하고, 강력한 타입 시스템을 제공하여 개발 생산성을 높입니다. 최신 버전(v21)은 AI와의 통합을 강조하며 개발 효율성을 더욱 높였습니다. Angular는 방대한 생태계와 활발한 커뮤니티를 통해 지속적으로 발전하고 있습니다.",
+    "homepage": "https://angular.io",
+    "repo": "https://github.com/angular/angular",
+    "project_suitability": [
+      "복잡한 UI를 가진 엔터프라이즈 레벨 애플리케이션",
+      "대규모 데이터 처리가 필요한 웹 애플리케이션",
+      "다양한 사용자 인터랙션을 요구하는 웹 애플리케이션",
+      "팀 규모가 크고 유지보수성이 중요한 프로젝트",
+      "성능 최적화가 중요한 웹 애플리케이션"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Angular는 학습 곡선이 있는 프레임워크로, TypeScript, RxJS, 컴포넌트 개념에 대한 이해가 필요합니다. 하지만 강력한 CLI와 방대한 자료를 통해 충분히 학습 가능합니다."
+    },
+    "updated_at": "2025-11-28T04:44:09.399"
+  },
+  {
+    "name": "Apache",
+    "slug": "apache",
+    "category": "tool",
+    "description": "다양한 오픈소스 프로젝트를 지원하는 소프트웨어 재단, 커뮤니티 중심 개발 생태계 조성.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://www.apache.org/foundation/how-it-works",
+        "type": "documentation",
+        "title": "Apache Software Foundation 작동 방식 안내"
+      },
+      {
+        "url": "https://projects.apache.org/",
+        "type": "documentation",
+        "title": "Apache 프로젝트 목록 및 개별 프로젝트 문서"
+      },
+      {
+        "url": "https://www.apache.org/licenses/",
+        "type": "documentation",
+        "title": "Apache 라이선스 정보"
+      }
+    ],
+    "ai_explanation": "Apache Software Foundation (ASF)는 290개 이상의 오픈 소스 프로젝트를 관리하는 비영리 재단입니다. 웹 서버, 데이터 처리, 클라우드 컴퓨팅, 검색 엔진 등 광범위한 분야에서 사용되는 다양한 프로젝트를 지원합니다. Apache 프로젝트는 커뮤니티 중심의 개발 방식을 따르며, 투명하고 개방적인 방식으로 운영됩니다. ASF는 소프트웨어 개발뿐만 아니라, 개발자 커뮤니티의 성장과 발전을 지원하며, 오픈 소스 라이선스를 통해 자유로운 사용, 수정, 배포를 보장합니다. 핵심 가치는 'Community Over Code'로, 코드보다 커뮤니티의 중요성을 강조합니다. 지속 가능한 오픈 소스 생태계를 구축하고, 공공의 이익에 기여하는 것을 목표로 합니다.",
+    "homepage": "https://www.apache.org/",
+    "repo": "https://github.com/apache",
+    "project_suitability": [
+      "대규모 웹 애플리케이션 개발",
+      "데이터 처리 및 분석 시스템 구축",
+      "클라우드 환경에서의 애플리케이션 배포 및 관리",
+      "다양한 오픈 소스 솔루션 통합",
+      "기업 또는 조직의 기술 스택 표준화"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Apache 재단의 다양한 프로젝트는 각기 다른 학습 곡선을 가집니다. 특정 프로젝트(예: Apache HTTP Server)는 상대적으로 배우기 쉬울 수 있지만, 다른 프로젝트(예: Apache Kafka, Apache Spark)는 데이터 처리, 분산 시스템에 대한 깊이 있는 이해를 요구합니다."
+    },
+    "updated_at": "2025-11-28T04:44:24.643"
+  },
+  {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "category": "database",
+    "description": "PostgreSQL은 강력하고 오픈 소스 객체-관계형 데이터베이스 시스템입니다. 안정성, 기능, 성능에 중점을 둡니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://www.postgresql.org/docs/",
+        "type": "documentation",
+        "title": "PostgreSQL 공식 문서 - 상세 기능 및 사용법 안내"
+      },
+      {
+        "url": "https://www.postgresql.org/docs/current/tutorial-start.html",
+        "type": "tutorial",
+        "title": "PostgreSQL 튜토리얼 - 초보자를 위한 단계별 가이드"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PL1lO7z36c8xXjGj197tD6-gDq6Wc5v1_M",
+        "type": "video",
+        "title": "PostgreSQL 튜토리얼 - 다양한 사용 사례와 팁"
+      },
+      {
+        "url": "https://www.postgresql.org/docs/current/release-notes.html",
+        "type": "documentation",
+        "title": "PostgreSQL 릴리즈 노트 - 버전별 변경 사항 및 개선 사항"
+      }
+    ],
+    "ai_explanation": "PostgreSQL은 35년 이상 개발되어 온 강력한 오픈 소스 객체-관계형 데이터베이스입니다. ACID 트랜잭션, 동시성 제어, 확장 가능한 아키텍처를 지원하며, 다양한 데이터 유형과 고급 기능(JSON 지원, 확장성)을 제공합니다.  최신 버전(18.1, 17.7, 16.11, 15.15, 14.20, 13.23)이 2025년 11월 13일에 릴리즈되었으며, 보안 취약점 수정 및 버그 픽스가 이루어졌습니다. PostgreSQL 13은 지원이 종료되었으므로, 최신 버전으로의 업그레이드가 권장됩니다.  뛰어난 확장성과 신뢰성으로 인해, 다양한 규모의 프로젝트에 적합하며, 풍부한 커뮤니티 지원과 공식 문서를 통해 학습이 용이합니다.",
+    "homepage": "https://www.postgresql.org/",
+    "repo": "https://git.postgresql.org/gitweb/?p=postgresql.git",
+    "project_suitability": [
+      "대규모 데이터 처리 및 분석이 필요한 애플리케이션",
+      "복잡한 관계형 데이터 구조를 가진 애플리케이션 (예: ERP, CRM 시스템)",
+      "고가용성과 데이터 일관성이 중요한 금융 시스템",
+      "다양한 데이터 유형(JSON, XML)을 처리해야 하는 애플리케이션",
+      "오픈 소스 솔루션을 선호하는 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "SQL에 대한 기본적인 이해가 필요하며, 데이터베이스 관리 및 튜닝에 대한 지식이 있으면 더욱 효과적으로 활용할 수 있습니다. 고급 기능을 사용하려면 추가 학습이 필요합니다."
+    },
+    "updated_at": "2025-11-28T04:45:18.964"
+  },
+  {
+    "name": "Node.js",
+    "slug": "nodedotjs",
+    "category": "language",
+    "description": "Node.js는 JavaScript 런타임 환경으로, 서버 사이드 개발을 가능하게 합니다. 비동기 I/O와 단일 스레드 이벤트 루프를 통해 고성능 애플리케이션 구축에 특화되어 있습니다.",
+    "logoUrl": "https://cdn.simpleicons.org/nodedotjs",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://nodejs.org/ko/learn",
+        "type": "documentation",
+        "title": "Node.js 공식 학습 자료"
+      },
+      {
+        "url": "https://nodejs.org/docs/latest/api/",
+        "type": "documentation",
+        "title": "Node.js API 레퍼런스"
+      },
+      {
+        "url": "https://expressjs.com/",
+        "type": "documentation",
+        "title": "Express.js 공식 문서 (Node.js 프레임워크)"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4",
+        "type": "video",
+        "title": "Node.js 강좌 (생활코딩)"
+      }
+    ],
+    "ai_explanation": "Node.js는 Chrome V8 JavaScript 엔진을 기반으로 구축된 런타임 환경입니다. 서버 측 JavaScript 개발을 가능하게 하며, npm(Node Package Manager)을 통해 방대한 오픈 소스 패키지를 활용할 수 있습니다. 비동기, 논블로킹 I/O 모델은 높은 동시성을 처리하며, 단일 스레드 이벤트 루프는 메모리 효율성을 높입니다. Node.js는 웹 서버, API 서버, 실시간 애플리케이션, CLI 도구 등 다양한 프로젝트에 적합하며, Express.js와 같은 프레임워크를 통해 개발 생산성을 향상시킬 수 있습니다. 최근에는 Typescript와의 연동도 활발히 이루어지며 안정성과 코드 품질을 높이는 방향으로 발전하고 있습니다. 또한, 서버리스 환경에서도 Node.js가 널리 사용되고 있습니다.",
+    "homepage": "https://nodejs.org/",
+    "repo": "https://github.com/nodejs/node",
+    "project_suitability": [
+      "실시간 채팅 애플리케이션 구축에 적합합니다.",
+      "API 서버 및 백엔드 개발에 용이합니다.",
+      "I/O 집약적인 애플리케이션에 적합합니다.",
+      "서버리스 환경에서 빠른 개발을 가능하게 합니다.",
+      "마이크로서비스 아키텍처 구현에도 적합합니다."
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "JavaScript에 대한 기본적인 이해가 필요하며, 비동기 프로그래밍 개념을 익혀야 합니다. npm 사용법과 모듈, 프레임워크 학습에도 시간이 소요됩니다."
+    },
+    "updated_at": "2025-11-28T04:45:37.511"
+  },
+  {
+    "name": "Elasticsearch",
+    "slug": "elasticsearch",
+    "category": "database",
+    "description": "Elasticsearch는 분산 검색 및 분석 엔진으로, 빠르고 확장 가능한 데이터 검색 및 AI 애플리케이션에 적합합니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html",
+        "type": "documentation",
+        "title": "Elasticsearch 공식 문서: 상세한 기능 및 사용법 안내"
+      },
+      {
+        "url": "https://www.elastic.co/training/elasticsearch-engineer",
+        "type": "tutorial",
+        "title": "Elastic 공식 교육: Elasticsearch 엔지니어 과정"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLtIuI6Gq5Yp0q3X4049wL-83C30y-41vQ",
+        "type": "video",
+        "title": "Elasticsearch 튜토리얼 (유튜브): 기초부터 활용까지 설명"
+      },
+      {
+        "url": "https://www.oreilly.com/library/view/elasticsearch-the-definitive/9781449358532/",
+        "type": "book",
+        "title": "Elasticsearch: The Definitive Guide (O'Reilly): 심층적인 기술 해설"
+      }
+    ],
+    "ai_explanation": "Elasticsearch는 오픈 소스 분산 검색 및 분석 엔진으로, 대규모 데이터셋에서 실시간 검색 및 분석을 수행하도록 설계되었습니다.  다양한 데이터 형식(구조화된 데이터, 비구조화된 텍스트, 벡터 데이터)을 지원하며, 빠른 검색 속도와 뛰어난 확장성을 제공합니다.  Elasticsearch는 데이터 저장, 벡터 데이터베이스, 분석 엔진, 검색 엔진, 지리 공간 엔진 기능을 통합하여 AI 기반 애플리케이션,  관측 가능성(Observability), 보안 분석 등에 활용됩니다. 특히, 텍스트 검색, 로그 분석,  지리 공간 데이터 분석, 추천 시스템 구축에 강점을 보입니다.  Elasticsearch Service를 통해 클라우드 환경에서도 쉽게 사용할 수 있으며, Kibana, Beats, Logstash와 같은 Elastic Stack의 다른 구성 요소들과 함께 활용하여 데이터 파이프라인을 구축할 수 있습니다.",
+    "homepage": "https://www.elastic.co/elasticsearch/",
+    "repo": "https://github.com/elastic/elasticsearch",
+    "project_suitability": [
+      "대규모 로그 분석 및 모니터링 시스템 구축",
+      "실시간 검색 기능을 필요로 하는 웹 애플리케이션",
+      "AI 기반 추천 시스템 개발",
+      "지리 공간 데이터 분석을 위한 애플리케이션",
+      "데이터 시각화 및 대시보드 구축"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Elasticsearch는 개념 이해와 설정에 어느 정도 시간이 필요합니다. 쿼리 DSL, 인덱싱, 클러스터 관리 등 학습해야 할 내용이 많지만, 공식 문서와 커뮤니티 자료가 풍부하여 학습 접근성은 좋은 편입니다."
+    },
+    "updated_at": "2025-11-28T04:45:52.807"
+  },
+  {
+    "name": "Django",
+    "slug": "django",
+    "category": "framework",
+    "description": "Django는 Python 기반의 고수준 웹 프레임워크로, 빠른 개발과 깔끔한 설계를 지향합니다.",
+    "logoUrl": "https://cdn.simpleicons.org/django",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://docs.djangoproject.com/ko/latest/",
+        "type": "documentation",
+        "title": "Django 공식 문서 (한국어)"
+      },
+      {
+        "url": "https://docs.djangoproject.com/en/stable/intro/tutorial01/",
+        "type": "tutorial",
+        "title": "Django 공식 튜토리얼 (영문)"
+      },
+      {
+        "url": "https://www.djangoproject.com/start/",
+        "type": "tutorial",
+        "title": "Django 시작하기"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLw-jQyD7J_I-9J9L635FhK66w15e2B3X6",
+        "type": "video",
+        "title": "Django 튜토리얼 (유튜브, 다양한 강좌)"
+      }
+    ],
+    "ai_explanation": "Django는 Python 웹 개발을 위한 강력한 프레임워크로, 웹 애플리케이션 개발의 전반적인 과정을 효율적으로 처리합니다. ORM(Object-Relational Mapper)을 통해 데이터베이스 연동을 쉽게 하고, 템플릿 시스템, URL 라우팅, 관리자 인터페이스 등 웹 개발에 필요한 다양한 기능을 기본적으로 제공합니다. 보안에 대한 고려가 뛰어나 CSRF 공격 방지, XSS 방어 등 웹 애플리케이션 보안 취약점을 예방하는 데 도움을 줍니다. 또한, 확장성이 뛰어나 대규모 트래픽을 처리하는 웹사이트 구축에도 적합하며, 커뮤니티 지원이 활발하여 문제 발생 시 도움을 얻기 용이합니다. Django는 개발 생산성을 높이고, 유지보수를 용이하게 만들어줍니다. 공식 홈페이지에서 최신 릴리스 및 문서를 확인할 수 있으며, 다양한 튜토리얼을 통해 학습할 수 있습니다.",
+    "homepage": "https://www.djangoproject.com/",
+    "repo": "https://github.com/django/django",
+    "project_suitability": [
+      "복잡한 데이터베이스 모델을 가진 웹 애플리케이션",
+      "관리자 인터페이스가 필요한 웹 서비스",
+      "빠른 개발 속도가 요구되는 프로젝트",
+      "확장성과 유지보수성이 중요한 웹 사이트",
+      "RESTful API 기반의 백엔드 개발"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Python 언어에 대한 기본적인 이해가 필요하며, Django의 구조와 각 컴포넌트의 역할을 이해하는 데 시간이 소요됩니다. ORM, 템플릿, 모델, 뷰, URL 설정 등 주요 개념을 익혀야 합니다."
+    },
+    "updated_at": "2025-11-28T04:51:04.641"
+  },
+  {
+    "name": "Swift",
+    "slug": "swift",
+    "category": "language",
+    "description": "안전하고 빠르며 표현력이 풍부한 multiplatform 프로그래밍 언어. 임베디드부터 클라우드까지 확장 가능.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://www.swift.org/documentation/",
+        "type": "documentation",
+        "title": "공식 Swift 문서"
+      },
+      {
+        "url": "https://developer.apple.com/tutorials/swiftui",
+        "type": "tutorial",
+        "title": "SwiftUI 튜토리얼 (iOS 앱 개발)"
+      },
+      {
+        "url": "https://www.raywenderlich.com/swift",
+        "type": "tutorial",
+        "title": "Ray Wenderlich의 Swift 튜토리얼"
+      },
+      {
+        "url": "https://swiftwithmajid.com/",
+        "type": "blog",
+        "title": "Majid의 Swift 블로그 (실용적인 예제 제공)"
+      }
+    ],
+    "ai_explanation": "Swift는 Apple에서 개발한 강력한 프로그래밍 언어로, iOS, macOS, watchOS, tvOS, Linux, Windows 등 다양한 플랫폼에서 사용 가능합니다. Swift는 안전성, 성능, 표현력을 강조하며, 특히 메모리 안전성을 위한 설계가 특징입니다. C 및 C++와의 뛰어난 상호 운용성을 제공하여 기존 코드베이스에 점진적으로 통합할 수 있습니다. Swift는 컴파일 속도가 빠르며, 간결하고 읽기 쉬운 코드를 작성할 수 있도록 설계되었습니다. SwiftUI와 같은 프레임워크를 통해 사용자 인터페이스를 쉽게 구축할 수 있으며, 클라우드 서비스, 명령줄 도구, 임베디드 시스템 등 다양한 분야에서 활용됩니다. Swift는 지속적으로 발전하고 있으며, 새로운 기능과 최적화를 통해 더욱 강력한 언어로 거듭나고 있습니다.",
+    "homepage": "https://swift.org",
+    "repo": "https://github.com/apple/swift",
+    "project_suitability": [
+      "iOS, macOS, watchOS, tvOS 앱 개발",
+      "서버 사이드 애플리케이션 개발 (Cloud Services)",
+      "Linux 환경에서의 command-line tool 개발",
+      "임베디드 시스템 및 펌웨어 개발",
+      "C 및 C++ 코드와 연동이 필요한 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "Swift는 배우기 쉬운 언어로 설계되었지만, 고급 기능을 익히고 실무에 적용하려면 어느 정도의 학습 기간이 필요합니다. 특히, Swift의 메모리 관리 및 비동기 프로그래밍 개념을 이해하는 것이 중요합니다."
+    },
+    "updated_at": "2025-11-28T04:51:35.054"
+  },
+  {
+    "name": "Streamlit",
+    "slug": "streamlit",
+    "category": "framework",
+    "description": "파이썬 기반의 데이터 앱을 빠르게 제작하고 공유할 수 있게 해주는 오픈 소스 프레임워크입니다.  데이터 과학, 머신러닝 프로젝트의 시각화 및 배포를 간편하게 지원합니다.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://docs.streamlit.io/",
+        "type": "documentation",
+        "title": "Streamlit 공식 문서: API 레퍼런스, 가이드, 튜토리얼 제공"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=d7fnzDQ5qM8",
+        "type": "video",
+        "title": "Streamlit Crash Course: 유투브 튜토리얼을 통해 핵심 기능 학습"
+      },
+      {
+        "url": "https://discuss.streamlit.io/",
+        "type": "tutorial",
+        "title": "Streamlit 포럼: 커뮤니티에서 질문하고 답변 얻기"
+      }
+    ],
+    "ai_explanation": "Streamlit은 데이터 과학자와 머신러닝 엔지니어가 복잡한 프론트엔드 지식 없이 데이터 중심의 웹 애플리케이션을 신속하게 구축할 수 있도록 설계된 프레임워크입니다.  '스크립팅'을 핵심 철학으로, 파이썬 코드를 작성하는 것만으로 대시보드, 시각화 도구, 데이터 분석 애플리케이션을 만들 수 있습니다.  자동 업데이트 기능을 통해 코드 변경 사항이 실시간으로 반영되며, 다양한 데이터 시각화 라이브러리(Matplotlib, Plotly 등)와의 통합을 지원합니다.  Streamlit Community Cloud를 통해 간편하게 애플리케이션을 배포하고 공유할 수 있으며, Snowflake와의 통합을 통해 기업 환경에서의 활용도 가능합니다. 최근에는 Custom Components V2 릴리즈를 통해 사용자 정의 컴포넌트 개발을 더욱 유연하게 지원합니다.",
+    "homepage": "https://streamlit.io/",
+    "repo": "https://github.com/streamlit/streamlit",
+    "project_suitability": [
+      "데이터 분석 결과를 시각화하고 공유해야 하는 프로젝트",
+      "머신러닝 모델의 데모 및 프로토타입 제작",
+      "내부 데이터 분석 도구 및 대시보드 개발",
+      "간단한 웹 기반의 데이터 입력 및 처리 애플리케이션",
+      "빠른 개발 및 배포가 요구되는 데이터 중심 프로젝트"
+    ],
+    "learning_difficulty": {
+      "label": "초급",
+      "stars": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "description": "파이썬 기본 지식만 있다면, Streamlit의 간단한 API를 통해 빠르게 앱을 만들 수 있습니다. 공식 문서와 예제가 잘 갖춰져 있어 학습이 용이합니다."
+    },
+    "updated_at": "2025-11-28T04:52:05.516"
+  },
+  {
+    "name": ".NET",
+    "slug": "dotnet",
+    "category": "framework",
+    "description": ".NET은 Microsoft에서 개발한 오픈 소스 범용 개발 플랫폼으로, 다양한 애플리케이션 개발을 지원합니다. C#, F#, Visual Basic 등의 언어를 사용하며, 윈도우, macOS, Linux, iOS, Android 등 다양한 플랫폼에서 실행됩니다.",
+    "logoUrl": "https://cdn.simpleicons.org/dotnet",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://dotnet.microsoft.com/ko-kr/learn",
+        "type": "tutorial",
+        "title": ".NET 공식 학습 자료 (Microsoft)"
+      },
+      {
+        "url": "https://learn.microsoft.com/ko-kr/dotnet/",
+        "type": "documentation",
+        "title": ".NET 공식 문서 (Microsoft)"
+      },
+      {
+        "url": "https://www.youtube.com/c/DotNET",
+        "type": "video",
+        "title": ".NET 공식 유튜브 채널 (Microsoft)"
+      }
+    ],
+    "ai_explanation": ".NET은 웹, 데스크톱, 모바일, IoT 등 광범위한 애플리케이션 개발을 위한 강력한 프레임워크입니다. .NET Core에서 시작하여 .NET 5, 6, 7, 8로 진화하며 성능, 크로스 플랫폼 지원, 개발 생산성 향상에 초점을 맞췄습니다. ASP.NET Core를 통해 웹 애플리케이션 개발을, .NET MAUI를 통해 크로스 플랫폼 UI 개발을 지원하며, C# 언어의 지속적인 개선과 풍부한 라이브러리 생태계를 제공합니다. 마이크로서비스, 클라우드 네이티브 아키텍처 지원에 용이하며, 최신 .NET 버전은 성능 최적화와 개발 편의성을 대폭 향상시켰습니다.",
+    "homepage": "https://dotnet.microsoft.com/",
+    "repo": "https://github.com/dotnet",
+    "project_suitability": [
+      "다양한 플랫폼을 지원하는 크로스 플랫폼 애플리케이션 개발",
+      "웹 API 및 백엔드 서비스 개발 (ASP.NET Core)",
+      "데스크톱 애플리케이션 개발 (Windows Forms, WPF)",
+      "모바일 애플리케이션 개발 (.NET MAUI)",
+      "IoT (사물 인터넷) 프로젝트 개발"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": ".NET은 C# 언어, 프레임워크, 다양한 라이브러리 학습이 필요합니다.  Microsoft의 풍부한 문서와 커뮤니티 지원을 통해 학습할 수 있습니다. 숙련된 개발자는 .NET 생태계를 활용하여 더욱 효율적으로 개발할 수 있습니다."
+    },
+    "updated_at": "2025-11-28T04:52:31.233"
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql",
+    "category": "database",
+    "description": "오픈 소스 관계형 데이터베이스 관리 시스템(RDBMS). 웹 애플리케이션, 기업 시스템 등에 널리 사용.",
+    "logoUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "popularity": 0,
+    "learning_resources": [
+      {
+        "url": "https://dev.mysql.com/doc/",
+        "type": "documentation",
+        "title": "MySQL 공식 문서 - 상세한 기능 및 사용법 안내"
+      },
+      {
+        "url": "https://www.mysql.com/why-mysql/white-papers/",
+        "type": "documentation",
+        "title": "MySQL White Papers - 기술적 깊이를 더하는 자료"
+      },
+      {
+        "url": "https://dev.mysql.com/doc/refman/8.0/en/tutorial.html",
+        "type": "tutorial",
+        "title": "MySQL 튜토리얼 - MySQL 사용법을 단계별로 학습"
+      },
+      {
+        "url": "https://www.youtube.com/mysqlchannel",
+        "type": "video",
+        "title": "MySQL YouTube 채널 - 최신 기술 동향 및 사용법"
+      }
+    ],
+    "ai_explanation": "MySQL은 전 세계적으로 널리 사용되는 오픈 소스 관계형 데이터베이스입니다. Oracle에서 개발 및 배포하며, 안정성, 성능, 유연성, 그리고 광범위한 커뮤니티 지원을 자랑합니다. 다양한 운영 체제와 프로그래밍 언어를 지원하며, 특히 웹 애플리케이션 개발에 강력한 기능을 제공합니다. 최신 버전에서는 HeatWave를 통해 데이터 웨어하우스 및 머신 러닝 기능까지 통합하여 데이터 처리 능력을 확장했습니다. MySQL은 ACID 트랜잭션 지원을 통해 데이터 일관성을 보장하며, 다양한 스토리지 엔진(InnoDB, MyISAM 등)을 제공하여 사용 목적에 맞는 성능 최적화를 가능하게 합니다. 또한, MySQL Enterprise Edition을 통해 고급 기능과 관리 도구를 사용할 수 있습니다. MySQL은 스타트업부터 대기업까지 다양한 규모의 프로젝트에서 데이터 저장 및 관리를 위한 핵심 기술로 활용되고 있습니다.",
+    "homepage": "https://www.mysql.com/",
+    "repo": "https://github.com/mysql/mysql-server",
+    "project_suitability": [
+      "대규모 트랜잭션 처리 시스템",
+      "웹 애플리케이션 및 CMS (Content Management System)",
+      "데이터 분석 및 비즈니스 인텔리전스 (HeatWave 활용)",
+      "온라인 쇼핑몰, 소셜 미디어 플랫폼",
+      "임베디드 시스템 및 IoT (Internet of Things) 애플리케이션"
+    ],
+    "learning_difficulty": {
+      "label": "중급",
+      "stars": [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      "description": "SQL 기본 지식과 데이터베이스 개념을 이해해야 하며, 튜닝 및 최적화는 숙련된 경험을 필요로 합니다. MySQL 관련 다양한 자료가 존재하여 학습 접근성은 높습니다."
+    },
+    "updated_at": "2025-11-28T04:52:44.459"
   }
 ]

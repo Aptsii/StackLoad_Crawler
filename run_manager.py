@@ -23,6 +23,7 @@ def check_dependencies():
         'os': None,  # 내장 모듈
         'datetime': None,  # 내장 모듈
         'webbrowser': None,  # 내장 모듈
+        'customtkinter': 'customtkinter',
     }
 
     missing_packages = []

@@ -5,7 +5,9 @@
 __pycache__/
 *.pyc
 
+
 # IDE settings
 .vscode/
+!.vscode/extensions.json
 .idea/
 .DS_Store

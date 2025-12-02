@@ -1,6 +1,5 @@
 requests
 beautifulsoup4
-ddgs
 openai
 supabase
 python-dotenv
@@ -8,3 +7,7 @@ schedule
 fastapi
 uvicorn
 pillow
+google-genai
+crawl4ai
+playwright
+customtkinter
